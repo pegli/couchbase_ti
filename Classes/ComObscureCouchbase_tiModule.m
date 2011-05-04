@@ -97,6 +97,7 @@
 }
 
 - (NSString *)couchbaseAppRoot {
+    NSLog(@"asked for root");
     return [NSString stringWithFormat:@"modules/%@/couchbase",[self moduleId]];
 }
 

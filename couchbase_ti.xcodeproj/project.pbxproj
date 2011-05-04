@@ -1582,14 +1582,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
+					"$(BUILT_PRODUCTS)/include",
 					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
 				);
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Debug;
@@ -1606,14 +1603,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
+					"$(BUILT_PRODUCTS)/include",
 					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
 				);
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Release;
@@ -1631,7 +1625,6 @@
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -1653,7 +1646,6 @@
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
 				);
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)";
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",

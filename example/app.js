@@ -15,3 +15,5 @@ window.open();
 // TODO: write your module tests here
 var couchbase_ti = require('com.obscure.couchbase_ti');
 Ti.API.info("module is => " + couchbase_ti);
+
+couchbase_ti.startCouchbase();

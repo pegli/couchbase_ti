@@ -28,7 +28,11 @@
 		24DE9E1211C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		DAD0903713704DB700E6EF5C /* libCouchbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD0903613704DB700E6EF5C /* libCouchbase.a */; };
+		DA155A831371C0A1006FCC18 /* libCouchbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA155A821371C0A1006FCC18 /* libCouchbase.a */; };
+		DA3E07FF1371CC6F0048E006 /* emonk_app.js in Sources */ = {isa = PBXBuildFile; fileRef = DA3E06151371CC6F0048E006 /* emonk_app.js */; };
+		DA3E08001371CC6F0048E006 /* emonk_mapred.js in Sources */ = {isa = PBXBuildFile; fileRef = DA3E06161371CC6F0048E006 /* emonk_mapred.js */; };
+		DA3E08021371CC6F0048E006 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DA3E066A1371CC6F0048E006 /* Makefile */; };
+		DA3E08031371CC6F0048E006 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = DA3E07A51371CC6F0048E006 /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,23 +43,23 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = couchbase_ti;
 		};
-		DA7B9E52136F517B008C13E0 /* PBXContainerItemProxy */ = {
+		DA155A781371C078006FCC18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */;
+			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BC4A607D1324C493003F32D3;
-			remoteInfo = "Couchbase-iphoneos";
+			remoteInfo = Couchbase;
 		};
-		DA7B9E56136F517B008C13E0 /* PBXContainerItemProxy */ = {
+		DA155A7A1371C078006FCC18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */;
+			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 79F5314313208D3700038ADD;
 			remoteInfo = Couchbase.bundle;
 		};
-		DAD0903813704DBF00E6EF5C /* PBXContainerItemProxy */ = {
+		DA155A7E1371C099006FCC18 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */;
+			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BC4A607C1324C493003F32D3;
 			remoteInfo = Couchbase;
@@ -71,7 +75,463 @@
 		AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComObscureCouchbase_ti_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComObscureCouchbase_ti.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComObscureCouchbase_ti.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Couchbase.xcodeproj; path = "iOS-Couchbase/MobileCouchbase/Couchbase.xcodeproj"; sourceTree = "<group>"; };
+		DA155A681371C078006FCC18 /* Couchbase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Couchbase.xcodeproj; path = "iOS-Couchbase/MobileCouchbase/Couchbase.xcodeproj"; sourceTree = "<group>"; };
+		DA155A821371C0A1006FCC18 /* libCouchbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCouchbase.a; sourceTree = SOURCE_ROOT; };
+		DA3E060C1371CC490048E006 /* default.ini */ = {isa = PBXFileReference; lastKnownFileType = text; name = default.ini; path = "iOS-Couchbase/MobileCouchbase/default.ini"; sourceTree = "<group>"; };
+		DA3E060F1371CC6F0048E006 /* demo.couch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = demo.couch; path = "iOS-Couchbase/MobileCouchbase/demo.couch"; sourceTree = "<group>"; };
+		DA3E06121371CC6F0048E006 /* start.boot */ = {isa = PBXFileReference; lastKnownFileType = file; path = start.boot; sourceTree = "<group>"; };
+		DA3E06131371CC6F0048E006 /* start_clean.boot */ = {isa = PBXFileReference; lastKnownFileType = file; path = start_clean.boot; sourceTree = "<group>"; };
+		DA3E06141371CC6F0048E006 /* start_sasl.boot */ = {isa = PBXFileReference; lastKnownFileType = file; path = start_sasl.boot; sourceTree = "<group>"; };
+		DA3E06151371CC6F0048E006 /* emonk_app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emonk_app.js; sourceTree = "<group>"; };
+		DA3E06161371CC6F0048E006 /* emonk_mapred.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = emonk_mapred.js; sourceTree = "<group>"; };
+		DA3E06171371CC6F0048E006 /* erl_inetrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erl_inetrc; sourceTree = "<group>"; };
+		DA3E061B1371CC6F0048E006 /* couch.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = couch.app; sourceTree = "<group>"; };
+		DA3E061C1371CC6F0048E006 /* couch.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch.beam; sourceTree = "<group>"; };
+		DA3E061D1371CC6F0048E006 /* couch_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_app.beam; sourceTree = "<group>"; };
+		DA3E061E1371CC6F0048E006 /* couch_app_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_app_server.beam; sourceTree = "<group>"; };
+		DA3E061F1371CC6F0048E006 /* couch_app_server_emonk.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_app_server_emonk.beam; sourceTree = "<group>"; };
+		DA3E06201371CC6F0048E006 /* couch_app_server_erlang.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_app_server_erlang.beam; sourceTree = "<group>"; };
+		DA3E06211371CC6F0048E006 /* couch_auth_cache.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_auth_cache.beam; sourceTree = "<group>"; };
+		DA3E06221371CC6F0048E006 /* couch_btree.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_btree.beam; sourceTree = "<group>"; };
+		DA3E06231371CC6F0048E006 /* couch_changes.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_changes.beam; sourceTree = "<group>"; };
+		DA3E06241371CC6F0048E006 /* couch_config.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_config.beam; sourceTree = "<group>"; };
+		DA3E06251371CC6F0048E006 /* couch_config_writer.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_config_writer.beam; sourceTree = "<group>"; };
+		DA3E06261371CC6F0048E006 /* couch_db.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_db.beam; sourceTree = "<group>"; };
+		DA3E06271371CC6F0048E006 /* couch_db_update_notifier.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_db_update_notifier.beam; sourceTree = "<group>"; };
+		DA3E06281371CC6F0048E006 /* couch_db_update_notifier_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_db_update_notifier_sup.beam; sourceTree = "<group>"; };
+		DA3E06291371CC6F0048E006 /* couch_db_updater.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_db_updater.beam; sourceTree = "<group>"; };
+		DA3E062A1371CC6F0048E006 /* couch_doc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_doc.beam; sourceTree = "<group>"; };
+		DA3E062B1371CC6F0048E006 /* couch_event_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_event_sup.beam; sourceTree = "<group>"; };
+		DA3E062C1371CC6F0048E006 /* couch_external_manager.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_external_manager.beam; sourceTree = "<group>"; };
+		DA3E062D1371CC6F0048E006 /* couch_external_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_external_server.beam; sourceTree = "<group>"; };
+		DA3E062E1371CC6F0048E006 /* couch_file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_file.beam; sourceTree = "<group>"; };
+		DA3E062F1371CC6F0048E006 /* couch_httpd.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd.beam; sourceTree = "<group>"; };
+		DA3E06301371CC6F0048E006 /* couch_httpd_auth.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_auth.beam; sourceTree = "<group>"; };
+		DA3E06311371CC6F0048E006 /* couch_httpd_db.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_db.beam; sourceTree = "<group>"; };
+		DA3E06321371CC6F0048E006 /* couch_httpd_external.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_external.beam; sourceTree = "<group>"; };
+		DA3E06331371CC6F0048E006 /* couch_httpd_misc_handlers.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_misc_handlers.beam; sourceTree = "<group>"; };
+		DA3E06341371CC6F0048E006 /* couch_httpd_oauth.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_oauth.beam; sourceTree = "<group>"; };
+		DA3E06351371CC6F0048E006 /* couch_httpd_rewrite.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_rewrite.beam; sourceTree = "<group>"; };
+		DA3E06361371CC6F0048E006 /* couch_httpd_show.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_show.beam; sourceTree = "<group>"; };
+		DA3E06371371CC6F0048E006 /* couch_httpd_stats_handlers.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_stats_handlers.beam; sourceTree = "<group>"; };
+		DA3E06381371CC6F0048E006 /* couch_httpd_vhost.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_vhost.beam; sourceTree = "<group>"; };
+		DA3E06391371CC6F0048E006 /* couch_httpd_view.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_httpd_view.beam; sourceTree = "<group>"; };
+		DA3E063A1371CC6F0048E006 /* couch_key_tree.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_key_tree.beam; sourceTree = "<group>"; };
+		DA3E063B1371CC6F0048E006 /* couch_log.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_log.beam; sourceTree = "<group>"; };
+		DA3E063C1371CC6F0048E006 /* couch_native_process.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_native_process.beam; sourceTree = "<group>"; };
+		DA3E063D1371CC6F0048E006 /* couch_os_process.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_os_process.beam; sourceTree = "<group>"; };
+		DA3E063E1371CC6F0048E006 /* couch_query_servers.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_query_servers.beam; sourceTree = "<group>"; };
+		DA3E063F1371CC6F0048E006 /* couch_ref_counter.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_ref_counter.beam; sourceTree = "<group>"; };
+		DA3E06401371CC6F0048E006 /* couch_rep.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep.beam; sourceTree = "<group>"; };
+		DA3E06411371CC6F0048E006 /* couch_rep_att.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_att.beam; sourceTree = "<group>"; };
+		DA3E06421371CC6F0048E006 /* couch_rep_changes_feed.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_changes_feed.beam; sourceTree = "<group>"; };
+		DA3E06431371CC6F0048E006 /* couch_rep_db_listener.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_db_listener.beam; sourceTree = "<group>"; };
+		DA3E06441371CC6F0048E006 /* couch_rep_httpc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_httpc.beam; sourceTree = "<group>"; };
+		DA3E06451371CC6F0048E006 /* couch_rep_missing_revs.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_missing_revs.beam; sourceTree = "<group>"; };
+		DA3E06461371CC6F0048E006 /* couch_rep_reader.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_reader.beam; sourceTree = "<group>"; };
+		DA3E06471371CC6F0048E006 /* couch_rep_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_sup.beam; sourceTree = "<group>"; };
+		DA3E06481371CC6F0048E006 /* couch_rep_writer.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_rep_writer.beam; sourceTree = "<group>"; };
+		DA3E06491371CC6F0048E006 /* couch_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_server.beam; sourceTree = "<group>"; };
+		DA3E064A1371CC6F0048E006 /* couch_server_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_server_sup.beam; sourceTree = "<group>"; };
+		DA3E064B1371CC6F0048E006 /* couch_stats_aggregator.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_stats_aggregator.beam; sourceTree = "<group>"; };
+		DA3E064C1371CC6F0048E006 /* couch_stats_collector.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_stats_collector.beam; sourceTree = "<group>"; };
+		DA3E064D1371CC6F0048E006 /* couch_stream.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_stream.beam; sourceTree = "<group>"; };
+		DA3E064E1371CC6F0048E006 /* couch_task_status.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_task_status.beam; sourceTree = "<group>"; };
+		DA3E064F1371CC6F0048E006 /* couch_util.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_util.beam; sourceTree = "<group>"; };
+		DA3E06501371CC6F0048E006 /* couch_uuids.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_uuids.beam; sourceTree = "<group>"; };
+		DA3E06511371CC6F0048E006 /* couch_view.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view.beam; sourceTree = "<group>"; };
+		DA3E06521371CC6F0048E006 /* couch_view_compactor.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_compactor.beam; sourceTree = "<group>"; };
+		DA3E06531371CC6F0048E006 /* couch_view_group.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_group.beam; sourceTree = "<group>"; };
+		DA3E06541371CC6F0048E006 /* couch_view_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_server.beam; sourceTree = "<group>"; };
+		DA3E06551371CC6F0048E006 /* couch_view_server_emonk.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_server_emonk.beam; sourceTree = "<group>"; };
+		DA3E06561371CC6F0048E006 /* couch_view_server_erlang.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_server_erlang.beam; sourceTree = "<group>"; };
+		DA3E06571371CC6F0048E006 /* couch_view_server_os.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_server_os.beam; sourceTree = "<group>"; };
+		DA3E06581371CC6F0048E006 /* couch_view_updater.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_view_updater.beam; sourceTree = "<group>"; };
+		DA3E06591371CC6F0048E006 /* couch_work_queue.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = couch_work_queue.beam; sourceTree = "<group>"; };
+		DA3E065B1371CC6F0048E006 /* couchspawnkillable */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = couchspawnkillable; sourceTree = "<group>"; };
+		DA3E065D1371CC6F0048E006 /* couch_icu_driver.la */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = couch_icu_driver.la; sourceTree = "<group>"; };
+		DA3E065E1371CC6F0048E006 /* libcouch_icu_driver.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcouch_icu_driver.a; sourceTree = "<group>"; };
+		DA3E065F1371CC6F0048E006 /* stat_descriptions.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stat_descriptions.cfg; sourceTree = "<group>"; };
+		DA3E06621371CC6F0048E006 /* crypto.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crypto.app; sourceTree = "<group>"; };
+		DA3E06631371CC6F0048E006 /* crypto.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crypto.appup; sourceTree = "<group>"; };
+		DA3E06641371CC6F0048E006 /* crypto.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = crypto.beam; sourceTree = "<group>"; };
+		DA3E06651371CC6F0048E006 /* crypto_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = crypto_app.beam; sourceTree = "<group>"; };
+		DA3E06661371CC6F0048E006 /* crypto_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = crypto_server.beam; sourceTree = "<group>"; };
+		DA3E06671371CC6F0048E006 /* crypto_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = crypto_sup.beam; sourceTree = "<group>"; };
+		DA3E066A1371CC6F0048E006 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		DA3E066D1371CC6F0048E006 /* emonk.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = emonk.app; sourceTree = "<group>"; };
+		DA3E066E1371CC6F0048E006 /* emonk.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = emonk.beam; sourceTree = "<group>"; };
+		DA3E06711371CC6F0048E006 /* oauth.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oauth.app; sourceTree = "<group>"; };
+		DA3E06721371CC6F0048E006 /* oauth.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth.beam; sourceTree = "<group>"; };
+		DA3E06731371CC6F0048E006 /* oauth_hmac_sha1.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth_hmac_sha1.beam; sourceTree = "<group>"; };
+		DA3E06741371CC6F0048E006 /* oauth_http.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth_http.beam; sourceTree = "<group>"; };
+		DA3E06751371CC6F0048E006 /* oauth_plaintext.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth_plaintext.beam; sourceTree = "<group>"; };
+		DA3E06761371CC6F0048E006 /* oauth_unix.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth_unix.beam; sourceTree = "<group>"; };
+		DA3E06771371CC6F0048E006 /* oauth_uri.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = oauth_uri.beam; sourceTree = "<group>"; };
+		DA3E067A1371CC6F0048E006 /* erl_prim_loader.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_prim_loader.beam; sourceTree = "<group>"; };
+		DA3E067B1371CC6F0048E006 /* erlang.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erlang.beam; sourceTree = "<group>"; };
+		DA3E067C1371CC6F0048E006 /* init.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = init.beam; sourceTree = "<group>"; };
+		DA3E067D1371CC6F0048E006 /* otp_ring0.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = otp_ring0.beam; sourceTree = "<group>"; };
+		DA3E067E1371CC6F0048E006 /* prim_file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = prim_file.beam; sourceTree = "<group>"; };
+		DA3E067F1371CC6F0048E006 /* prim_inet.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = prim_inet.beam; sourceTree = "<group>"; };
+		DA3E06801371CC6F0048E006 /* prim_zip.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = prim_zip.beam; sourceTree = "<group>"; };
+		DA3E06811371CC6F0048E006 /* zlib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = zlib.beam; sourceTree = "<group>"; };
+		DA3E06831371CC6F0048E006 /* ibrowse.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ibrowse.app; sourceTree = "<group>"; };
+		DA3E06841371CC6F0048E006 /* ibrowse.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse.beam; sourceTree = "<group>"; };
+		DA3E06851371CC6F0048E006 /* ibrowse.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ibrowse.hrl; sourceTree = "<group>"; };
+		DA3E06861371CC6F0048E006 /* ibrowse_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_app.beam; sourceTree = "<group>"; };
+		DA3E06871371CC6F0048E006 /* ibrowse_http_client.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_http_client.beam; sourceTree = "<group>"; };
+		DA3E06881371CC6F0048E006 /* ibrowse_lb.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_lb.beam; sourceTree = "<group>"; };
+		DA3E06891371CC6F0048E006 /* ibrowse_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_lib.beam; sourceTree = "<group>"; };
+		DA3E068A1371CC6F0048E006 /* ibrowse_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_sup.beam; sourceTree = "<group>"; };
+		DA3E068B1371CC6F0048E006 /* ibrowse_test.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ibrowse_test.beam; sourceTree = "<group>"; };
+		DA3E068E1371CC6F0048E006 /* ftp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ftp.beam; sourceTree = "<group>"; };
+		DA3E068F1371CC6F0048E006 /* ftp_progress.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ftp_progress.beam; sourceTree = "<group>"; };
+		DA3E06901371CC6F0048E006 /* ftp_response.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ftp_response.beam; sourceTree = "<group>"; };
+		DA3E06911371CC6F0048E006 /* ftp_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ftp_sup.beam; sourceTree = "<group>"; };
+		DA3E06921371CC6F0048E006 /* http.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http.beam; sourceTree = "<group>"; };
+		DA3E06931371CC6F0048E006 /* http_chunk.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_chunk.beam; sourceTree = "<group>"; };
+		DA3E06941371CC6F0048E006 /* http_request.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_request.beam; sourceTree = "<group>"; };
+		DA3E06951371CC6F0048E006 /* http_response.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_response.beam; sourceTree = "<group>"; };
+		DA3E06961371CC6F0048E006 /* http_transport.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_transport.beam; sourceTree = "<group>"; };
+		DA3E06971371CC6F0048E006 /* http_uri.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_uri.beam; sourceTree = "<group>"; };
+		DA3E06981371CC6F0048E006 /* http_util.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = http_util.beam; sourceTree = "<group>"; };
+		DA3E06991371CC6F0048E006 /* httpc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc.beam; sourceTree = "<group>"; };
+		DA3E069A1371CC6F0048E006 /* httpc_cookie.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_cookie.beam; sourceTree = "<group>"; };
+		DA3E069B1371CC6F0048E006 /* httpc_handler.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_handler.beam; sourceTree = "<group>"; };
+		DA3E069C1371CC6F0048E006 /* httpc_handler_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_handler_sup.beam; sourceTree = "<group>"; };
+		DA3E069D1371CC6F0048E006 /* httpc_manager.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_manager.beam; sourceTree = "<group>"; };
+		DA3E069E1371CC6F0048E006 /* httpc_profile_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_profile_sup.beam; sourceTree = "<group>"; };
+		DA3E069F1371CC6F0048E006 /* httpc_request.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_request.beam; sourceTree = "<group>"; };
+		DA3E06A01371CC6F0048E006 /* httpc_response.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_response.beam; sourceTree = "<group>"; };
+		DA3E06A11371CC6F0048E006 /* httpc_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpc_sup.beam; sourceTree = "<group>"; };
+		DA3E06A21371CC6F0048E006 /* httpd.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd.beam; sourceTree = "<group>"; };
+		DA3E06A31371CC6F0048E006 /* httpd_acceptor.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_acceptor.beam; sourceTree = "<group>"; };
+		DA3E06A41371CC6F0048E006 /* httpd_acceptor_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_acceptor_sup.beam; sourceTree = "<group>"; };
+		DA3E06A51371CC6F0048E006 /* httpd_cgi.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_cgi.beam; sourceTree = "<group>"; };
+		DA3E06A61371CC6F0048E006 /* httpd_conf.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_conf.beam; sourceTree = "<group>"; };
+		DA3E06A71371CC6F0048E006 /* httpd_esi.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_esi.beam; sourceTree = "<group>"; };
+		DA3E06A81371CC6F0048E006 /* httpd_example.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_example.beam; sourceTree = "<group>"; };
+		DA3E06A91371CC6F0048E006 /* httpd_file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_file.beam; sourceTree = "<group>"; };
+		DA3E06AA1371CC6F0048E006 /* httpd_instance_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_instance_sup.beam; sourceTree = "<group>"; };
+		DA3E06AB1371CC6F0048E006 /* httpd_log.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_log.beam; sourceTree = "<group>"; };
+		DA3E06AC1371CC6F0048E006 /* httpd_manager.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_manager.beam; sourceTree = "<group>"; };
+		DA3E06AD1371CC6F0048E006 /* httpd_misc_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_misc_sup.beam; sourceTree = "<group>"; };
+		DA3E06AE1371CC6F0048E006 /* httpd_request.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_request.beam; sourceTree = "<group>"; };
+		DA3E06AF1371CC6F0048E006 /* httpd_request_handler.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_request_handler.beam; sourceTree = "<group>"; };
+		DA3E06B01371CC6F0048E006 /* httpd_response.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_response.beam; sourceTree = "<group>"; };
+		DA3E06B11371CC6F0048E006 /* httpd_script_env.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_script_env.beam; sourceTree = "<group>"; };
+		DA3E06B21371CC6F0048E006 /* httpd_socket.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_socket.beam; sourceTree = "<group>"; };
+		DA3E06B31371CC6F0048E006 /* httpd_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_sup.beam; sourceTree = "<group>"; };
+		DA3E06B41371CC6F0048E006 /* httpd_util.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = httpd_util.beam; sourceTree = "<group>"; };
+		DA3E06B51371CC6F0048E006 /* inets.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inets.app; sourceTree = "<group>"; };
+		DA3E06B61371CC6F0048E006 /* inets.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inets.appup; sourceTree = "<group>"; };
+		DA3E06B71371CC6F0048E006 /* inets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inets.beam; sourceTree = "<group>"; };
+		DA3E06B81371CC6F0048E006 /* inets_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inets_app.beam; sourceTree = "<group>"; };
+		DA3E06B91371CC6F0048E006 /* inets_regexp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inets_regexp.beam; sourceTree = "<group>"; };
+		DA3E06BA1371CC6F0048E006 /* inets_service.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inets_service.beam; sourceTree = "<group>"; };
+		DA3E06BB1371CC6F0048E006 /* inets_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inets_sup.beam; sourceTree = "<group>"; };
+		DA3E06BC1371CC6F0048E006 /* mod_actions.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_actions.beam; sourceTree = "<group>"; };
+		DA3E06BD1371CC6F0048E006 /* mod_alias.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_alias.beam; sourceTree = "<group>"; };
+		DA3E06BE1371CC6F0048E006 /* mod_auth.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_auth.beam; sourceTree = "<group>"; };
+		DA3E06BF1371CC6F0048E006 /* mod_auth_dets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_auth_dets.beam; sourceTree = "<group>"; };
+		DA3E06C01371CC6F0048E006 /* mod_auth_mnesia.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_auth_mnesia.beam; sourceTree = "<group>"; };
+		DA3E06C11371CC6F0048E006 /* mod_auth_plain.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_auth_plain.beam; sourceTree = "<group>"; };
+		DA3E06C21371CC6F0048E006 /* mod_auth_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_auth_server.beam; sourceTree = "<group>"; };
+		DA3E06C31371CC6F0048E006 /* mod_browser.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_browser.beam; sourceTree = "<group>"; };
+		DA3E06C41371CC6F0048E006 /* mod_cgi.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_cgi.beam; sourceTree = "<group>"; };
+		DA3E06C51371CC6F0048E006 /* mod_dir.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_dir.beam; sourceTree = "<group>"; };
+		DA3E06C61371CC6F0048E006 /* mod_disk_log.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_disk_log.beam; sourceTree = "<group>"; };
+		DA3E06C71371CC6F0048E006 /* mod_esi.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_esi.beam; sourceTree = "<group>"; };
+		DA3E06C81371CC6F0048E006 /* mod_get.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_get.beam; sourceTree = "<group>"; };
+		DA3E06C91371CC6F0048E006 /* mod_head.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_head.beam; sourceTree = "<group>"; };
+		DA3E06CA1371CC6F0048E006 /* mod_htaccess.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_htaccess.beam; sourceTree = "<group>"; };
+		DA3E06CB1371CC6F0048E006 /* mod_include.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_include.beam; sourceTree = "<group>"; };
+		DA3E06CC1371CC6F0048E006 /* mod_log.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_log.beam; sourceTree = "<group>"; };
+		DA3E06CD1371CC6F0048E006 /* mod_range.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_range.beam; sourceTree = "<group>"; };
+		DA3E06CE1371CC6F0048E006 /* mod_responsecontrol.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_responsecontrol.beam; sourceTree = "<group>"; };
+		DA3E06CF1371CC6F0048E006 /* mod_security.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_security.beam; sourceTree = "<group>"; };
+		DA3E06D01371CC6F0048E006 /* mod_security_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_security_server.beam; sourceTree = "<group>"; };
+		DA3E06D11371CC6F0048E006 /* mod_trace.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mod_trace.beam; sourceTree = "<group>"; };
+		DA3E06D21371CC6F0048E006 /* tftp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp.beam; sourceTree = "<group>"; };
+		DA3E06D31371CC6F0048E006 /* tftp_binary.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_binary.beam; sourceTree = "<group>"; };
+		DA3E06D41371CC6F0048E006 /* tftp_engine.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_engine.beam; sourceTree = "<group>"; };
+		DA3E06D51371CC6F0048E006 /* tftp_file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_file.beam; sourceTree = "<group>"; };
+		DA3E06D61371CC6F0048E006 /* tftp_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_lib.beam; sourceTree = "<group>"; };
+		DA3E06D71371CC6F0048E006 /* tftp_logger.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_logger.beam; sourceTree = "<group>"; };
+		DA3E06D81371CC6F0048E006 /* tftp_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = tftp_sup.beam; sourceTree = "<group>"; };
+		DA3E06DB1371CC6F0048E006 /* runcgi.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = runcgi.sh; sourceTree = "<group>"; };
+		DA3E06DD1371CC6F0048E006 /* ftp_internal.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ftp_internal.hrl; sourceTree = "<group>"; };
+		DA3E06DE1371CC6F0048E006 /* http_internal.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = http_internal.hrl; sourceTree = "<group>"; };
+		DA3E06DF1371CC6F0048E006 /* httpc_internal.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpc_internal.hrl; sourceTree = "<group>"; };
+		DA3E06E01371CC6F0048E006 /* httpd.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpd.hrl; sourceTree = "<group>"; };
+		DA3E06E11371CC6F0048E006 /* httpd_internal.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = httpd_internal.hrl; sourceTree = "<group>"; };
+		DA3E06E21371CC6F0048E006 /* inets_internal.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inets_internal.hrl; sourceTree = "<group>"; };
+		DA3E06E31371CC6F0048E006 /* mod_auth.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mod_auth.hrl; sourceTree = "<group>"; };
+		DA3E06E41371CC6F0048E006 /* tftp.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tftp.hrl; sourceTree = "<group>"; };
+		DA3E06E71371CC6F0048E006 /* application.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = application.beam; sourceTree = "<group>"; };
+		DA3E06E81371CC6F0048E006 /* application_controller.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = application_controller.beam; sourceTree = "<group>"; };
+		DA3E06E91371CC6F0048E006 /* application_master.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = application_master.beam; sourceTree = "<group>"; };
+		DA3E06EA1371CC6F0048E006 /* application_starter.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = application_starter.beam; sourceTree = "<group>"; };
+		DA3E06EB1371CC6F0048E006 /* auth.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = auth.beam; sourceTree = "<group>"; };
+		DA3E06EC1371CC6F0048E006 /* code.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = code.beam; sourceTree = "<group>"; };
+		DA3E06ED1371CC6F0048E006 /* code_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = code_server.beam; sourceTree = "<group>"; };
+		DA3E06EE1371CC6F0048E006 /* disk_log.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = disk_log.beam; sourceTree = "<group>"; };
+		DA3E06EF1371CC6F0048E006 /* disk_log_1.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = disk_log_1.beam; sourceTree = "<group>"; };
+		DA3E06F01371CC6F0048E006 /* disk_log_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = disk_log_server.beam; sourceTree = "<group>"; };
+		DA3E06F11371CC6F0048E006 /* disk_log_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = disk_log_sup.beam; sourceTree = "<group>"; };
+		DA3E06F21371CC6F0048E006 /* dist_ac.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dist_ac.beam; sourceTree = "<group>"; };
+		DA3E06F31371CC6F0048E006 /* dist_util.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dist_util.beam; sourceTree = "<group>"; };
+		DA3E06F41371CC6F0048E006 /* erl_boot_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_boot_server.beam; sourceTree = "<group>"; };
+		DA3E06F51371CC6F0048E006 /* erl_ddll.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_ddll.beam; sourceTree = "<group>"; };
+		DA3E06F61371CC6F0048E006 /* erl_distribution.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_distribution.beam; sourceTree = "<group>"; };
+		DA3E06F71371CC6F0048E006 /* erl_epmd.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_epmd.beam; sourceTree = "<group>"; };
+		DA3E06F81371CC6F0048E006 /* erl_reply.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_reply.beam; sourceTree = "<group>"; };
+		DA3E06F91371CC6F0048E006 /* error_handler.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = error_handler.beam; sourceTree = "<group>"; };
+		DA3E06FA1371CC6F0048E006 /* error_logger.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = error_logger.beam; sourceTree = "<group>"; };
+		DA3E06FB1371CC6F0048E006 /* erts_debug.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erts_debug.beam; sourceTree = "<group>"; };
+		DA3E06FC1371CC6F0048E006 /* file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = file.beam; sourceTree = "<group>"; };
+		DA3E06FD1371CC6F0048E006 /* file_io_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = file_io_server.beam; sourceTree = "<group>"; };
+		DA3E06FE1371CC6F0048E006 /* file_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = file_server.beam; sourceTree = "<group>"; };
+		DA3E06FF1371CC6F0048E006 /* gen_sctp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_sctp.beam; sourceTree = "<group>"; };
+		DA3E07001371CC6F0048E006 /* gen_tcp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_tcp.beam; sourceTree = "<group>"; };
+		DA3E07011371CC6F0048E006 /* gen_udp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_udp.beam; sourceTree = "<group>"; };
+		DA3E07021371CC6F0048E006 /* global.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = global.beam; sourceTree = "<group>"; };
+		DA3E07031371CC6F0048E006 /* global_group.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = global_group.beam; sourceTree = "<group>"; };
+		DA3E07041371CC6F0048E006 /* global_search.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = global_search.beam; sourceTree = "<group>"; };
+		DA3E07051371CC6F0048E006 /* group.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = group.beam; sourceTree = "<group>"; };
+		DA3E07061371CC6F0048E006 /* heart.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = heart.beam; sourceTree = "<group>"; };
+		DA3E07071371CC6F0048E006 /* hipe_unified_loader.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = hipe_unified_loader.beam; sourceTree = "<group>"; };
+		DA3E07081371CC6F0048E006 /* inet.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet.beam; sourceTree = "<group>"; };
+		DA3E07091371CC6F0048E006 /* inet6_sctp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet6_sctp.beam; sourceTree = "<group>"; };
+		DA3E070A1371CC6F0048E006 /* inet6_tcp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet6_tcp.beam; sourceTree = "<group>"; };
+		DA3E070B1371CC6F0048E006 /* inet6_tcp_dist.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet6_tcp_dist.beam; sourceTree = "<group>"; };
+		DA3E070C1371CC6F0048E006 /* inet6_udp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet6_udp.beam; sourceTree = "<group>"; };
+		DA3E070D1371CC6F0048E006 /* inet_config.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_config.beam; sourceTree = "<group>"; };
+		DA3E070E1371CC6F0048E006 /* inet_db.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_db.beam; sourceTree = "<group>"; };
+		DA3E070F1371CC6F0048E006 /* inet_dns.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_dns.beam; sourceTree = "<group>"; };
+		DA3E07101371CC6F0048E006 /* inet_gethost_native.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_gethost_native.beam; sourceTree = "<group>"; };
+		DA3E07111371CC6F0048E006 /* inet_hosts.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_hosts.beam; sourceTree = "<group>"; };
+		DA3E07121371CC6F0048E006 /* inet_parse.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_parse.beam; sourceTree = "<group>"; };
+		DA3E07131371CC6F0048E006 /* inet_res.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_res.beam; sourceTree = "<group>"; };
+		DA3E07141371CC6F0048E006 /* inet_sctp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_sctp.beam; sourceTree = "<group>"; };
+		DA3E07151371CC6F0048E006 /* inet_tcp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_tcp.beam; sourceTree = "<group>"; };
+		DA3E07161371CC6F0048E006 /* inet_tcp_dist.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_tcp_dist.beam; sourceTree = "<group>"; };
+		DA3E07171371CC6F0048E006 /* inet_udp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_udp.beam; sourceTree = "<group>"; };
+		DA3E07181371CC6F0048E006 /* kernel.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kernel.app; sourceTree = "<group>"; };
+		DA3E07191371CC6F0048E006 /* kernel.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kernel.appup; sourceTree = "<group>"; };
+		DA3E071A1371CC6F0048E006 /* kernel.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = kernel.beam; sourceTree = "<group>"; };
+		DA3E071B1371CC6F0048E006 /* kernel_config.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = kernel_config.beam; sourceTree = "<group>"; };
+		DA3E071C1371CC6F0048E006 /* net.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = net.beam; sourceTree = "<group>"; };
+		DA3E071D1371CC6F0048E006 /* net_adm.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = net_adm.beam; sourceTree = "<group>"; };
+		DA3E071E1371CC6F0048E006 /* net_kernel.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = net_kernel.beam; sourceTree = "<group>"; };
+		DA3E071F1371CC6F0048E006 /* os.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = os.beam; sourceTree = "<group>"; };
+		DA3E07201371CC6F0048E006 /* packages.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = packages.beam; sourceTree = "<group>"; };
+		DA3E07211371CC6F0048E006 /* pg2.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = pg2.beam; sourceTree = "<group>"; };
+		DA3E07221371CC6F0048E006 /* ram_file.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ram_file.beam; sourceTree = "<group>"; };
+		DA3E07231371CC6F0048E006 /* rpc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = rpc.beam; sourceTree = "<group>"; };
+		DA3E07241371CC6F0048E006 /* seq_trace.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = seq_trace.beam; sourceTree = "<group>"; };
+		DA3E07251371CC6F0048E006 /* standard_error.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = standard_error.beam; sourceTree = "<group>"; };
+		DA3E07261371CC6F0048E006 /* user.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = user.beam; sourceTree = "<group>"; };
+		DA3E07271371CC6F0048E006 /* user_drv.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = user_drv.beam; sourceTree = "<group>"; };
+		DA3E07281371CC6F0048E006 /* user_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = user_sup.beam; sourceTree = "<group>"; };
+		DA3E07291371CC6F0048E006 /* wrap_log_reader.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrap_log_reader.beam; sourceTree = "<group>"; };
+		DA3E072B1371CC6F0048E006 /* application_master.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = application_master.hrl; sourceTree = "<group>"; };
+		DA3E072C1371CC6F0048E006 /* disk_log.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = disk_log.hrl; sourceTree = "<group>"; };
+		DA3E072D1371CC6F0048E006 /* dist.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dist.hrl; sourceTree = "<group>"; };
+		DA3E072E1371CC6F0048E006 /* dist_util.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dist_util.hrl; sourceTree = "<group>"; };
+		DA3E072F1371CC6F0048E006 /* inet_boot.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_boot.hrl; sourceTree = "<group>"; };
+		DA3E07301371CC6F0048E006 /* inet_config.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_config.hrl; sourceTree = "<group>"; };
+		DA3E07311371CC6F0048E006 /* inet_dns.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_dns.hrl; sourceTree = "<group>"; };
+		DA3E07321371CC6F0048E006 /* inet_dns_record_adts.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_dns_record_adts.hrl; sourceTree = "<group>"; };
+		DA3E07331371CC6F0048E006 /* inet_int.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_int.hrl; sourceTree = "<group>"; };
+		DA3E07341371CC6F0048E006 /* inet_res.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inet_res.hrl; sourceTree = "<group>"; };
+		DA3E07351371CC6F0048E006 /* net_address.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = net_address.hrl; sourceTree = "<group>"; };
+		DA3E07381371CC6F0048E006 /* mochifmt.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochifmt.beam; sourceTree = "<group>"; };
+		DA3E07391371CC6F0048E006 /* mochifmt_records.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochifmt_records.beam; sourceTree = "<group>"; };
+		DA3E073A1371CC6F0048E006 /* mochifmt_std.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochifmt_std.beam; sourceTree = "<group>"; };
+		DA3E073B1371CC6F0048E006 /* mochiglobal.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiglobal.beam; sourceTree = "<group>"; };
+		DA3E073C1371CC6F0048E006 /* mochihex.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochihex.beam; sourceTree = "<group>"; };
+		DA3E073D1371CC6F0048E006 /* mochijson.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochijson.beam; sourceTree = "<group>"; };
+		DA3E073E1371CC6F0048E006 /* mochijson2.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochijson2.beam; sourceTree = "<group>"; };
+		DA3E073F1371CC6F0048E006 /* mochilists.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochilists.beam; sourceTree = "<group>"; };
+		DA3E07401371CC6F0048E006 /* mochilogfile2.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochilogfile2.beam; sourceTree = "<group>"; };
+		DA3E07411371CC6F0048E006 /* mochinum.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochinum.beam; sourceTree = "<group>"; };
+		DA3E07421371CC6F0048E006 /* mochitemp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochitemp.beam; sourceTree = "<group>"; };
+		DA3E07431371CC6F0048E006 /* mochiutf8.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiutf8.beam; sourceTree = "<group>"; };
+		DA3E07441371CC6F0048E006 /* mochiweb.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mochiweb.app; sourceTree = "<group>"; };
+		DA3E07451371CC6F0048E006 /* mochiweb.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb.beam; sourceTree = "<group>"; };
+		DA3E07461371CC6F0048E006 /* mochiweb_acceptor.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_acceptor.beam; sourceTree = "<group>"; };
+		DA3E07471371CC6F0048E006 /* mochiweb_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_app.beam; sourceTree = "<group>"; };
+		DA3E07481371CC6F0048E006 /* mochiweb_charref.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_charref.beam; sourceTree = "<group>"; };
+		DA3E07491371CC6F0048E006 /* mochiweb_cookies.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_cookies.beam; sourceTree = "<group>"; };
+		DA3E074A1371CC6F0048E006 /* mochiweb_cover.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_cover.beam; sourceTree = "<group>"; };
+		DA3E074B1371CC6F0048E006 /* mochiweb_echo.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_echo.beam; sourceTree = "<group>"; };
+		DA3E074C1371CC6F0048E006 /* mochiweb_headers.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_headers.beam; sourceTree = "<group>"; };
+		DA3E074D1371CC6F0048E006 /* mochiweb_html.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_html.beam; sourceTree = "<group>"; };
+		DA3E074E1371CC6F0048E006 /* mochiweb_http.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_http.beam; sourceTree = "<group>"; };
+		DA3E074F1371CC6F0048E006 /* mochiweb_io.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_io.beam; sourceTree = "<group>"; };
+		DA3E07501371CC6F0048E006 /* mochiweb_mime.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_mime.beam; sourceTree = "<group>"; };
+		DA3E07511371CC6F0048E006 /* mochiweb_multipart.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_multipart.beam; sourceTree = "<group>"; };
+		DA3E07521371CC6F0048E006 /* mochiweb_request.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_request.beam; sourceTree = "<group>"; };
+		DA3E07531371CC6F0048E006 /* mochiweb_response.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_response.beam; sourceTree = "<group>"; };
+		DA3E07541371CC6F0048E006 /* mochiweb_skel.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_skel.beam; sourceTree = "<group>"; };
+		DA3E07551371CC6F0048E006 /* mochiweb_socket.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_socket.beam; sourceTree = "<group>"; };
+		DA3E07561371CC6F0048E006 /* mochiweb_socket_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_socket_server.beam; sourceTree = "<group>"; };
+		DA3E07571371CC6F0048E006 /* mochiweb_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_sup.beam; sourceTree = "<group>"; };
+		DA3E07581371CC6F0048E006 /* mochiweb_util.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = mochiweb_util.beam; sourceTree = "<group>"; };
+		DA3E07591371CC6F0048E006 /* reloader.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = reloader.beam; sourceTree = "<group>"; };
+		DA3E075C1371CC6F0048E006 /* alarm_handler.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm_handler.beam; sourceTree = "<group>"; };
+		DA3E075D1371CC6F0048E006 /* erlsrv.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erlsrv.beam; sourceTree = "<group>"; };
+		DA3E075E1371CC6F0048E006 /* format_lib_supp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = format_lib_supp.beam; sourceTree = "<group>"; };
+		DA3E075F1371CC6F0048E006 /* misc_supp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = misc_supp.beam; sourceTree = "<group>"; };
+		DA3E07601371CC6F0048E006 /* overload.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = overload.beam; sourceTree = "<group>"; };
+		DA3E07611371CC6F0048E006 /* rb.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = rb.beam; sourceTree = "<group>"; };
+		DA3E07621371CC6F0048E006 /* rb_format_supp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = rb_format_supp.beam; sourceTree = "<group>"; };
+		DA3E07631371CC6F0048E006 /* release_handler.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = release_handler.beam; sourceTree = "<group>"; };
+		DA3E07641371CC6F0048E006 /* release_handler_1.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = release_handler_1.beam; sourceTree = "<group>"; };
+		DA3E07651371CC6F0048E006 /* sasl.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sasl.app; sourceTree = "<group>"; };
+		DA3E07661371CC6F0048E006 /* sasl.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sasl.appup; sourceTree = "<group>"; };
+		DA3E07671371CC6F0048E006 /* sasl.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sasl.beam; sourceTree = "<group>"; };
+		DA3E07681371CC6F0048E006 /* sasl_report.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sasl_report.beam; sourceTree = "<group>"; };
+		DA3E07691371CC6F0048E006 /* sasl_report_file_h.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sasl_report_file_h.beam; sourceTree = "<group>"; };
+		DA3E076A1371CC6F0048E006 /* sasl_report_tty_h.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sasl_report_tty_h.beam; sourceTree = "<group>"; };
+		DA3E076B1371CC6F0048E006 /* si.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = si.beam; sourceTree = "<group>"; };
+		DA3E076C1371CC6F0048E006 /* si_sasl_supp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = si_sasl_supp.beam; sourceTree = "<group>"; };
+		DA3E076D1371CC6F0048E006 /* systools.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = systools.beam; sourceTree = "<group>"; };
+		DA3E076E1371CC6F0048E006 /* systools_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = systools_lib.beam; sourceTree = "<group>"; };
+		DA3E076F1371CC6F0048E006 /* systools_make.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = systools_make.beam; sourceTree = "<group>"; };
+		DA3E07701371CC6F0048E006 /* systools_rc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = systools_rc.beam; sourceTree = "<group>"; };
+		DA3E07711371CC6F0048E006 /* systools_relup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = systools_relup.beam; sourceTree = "<group>"; };
+		DA3E07731371CC6F0048E006 /* systools.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = systools.hrl; sourceTree = "<group>"; };
+		DA3E07761371CC6F0048E006 /* inet_ssl_dist.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = inet_ssl_dist.beam; sourceTree = "<group>"; };
+		DA3E07771371CC6F0048E006 /* OTP-PKIX.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OTP-PKIX.beam"; sourceTree = "<group>"; };
+		DA3E07781371CC6F0048E006 /* ssl.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.app; sourceTree = "<group>"; };
+		DA3E07791371CC6F0048E006 /* ssl.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.appup; sourceTree = "<group>"; };
+		DA3E077A1371CC6F0048E006 /* ssl.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl.beam; sourceTree = "<group>"; };
+		DA3E077B1371CC6F0048E006 /* ssl_alert.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_alert.beam; sourceTree = "<group>"; };
+		DA3E077C1371CC6F0048E006 /* ssl_app.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_app.beam; sourceTree = "<group>"; };
+		DA3E077D1371CC6F0048E006 /* ssl_base64.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_base64.beam; sourceTree = "<group>"; };
+		DA3E077E1371CC6F0048E006 /* ssl_broker.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_broker.beam; sourceTree = "<group>"; };
+		DA3E077F1371CC6F0048E006 /* ssl_broker_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_broker_sup.beam; sourceTree = "<group>"; };
+		DA3E07801371CC6F0048E006 /* ssl_certificate.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_certificate.beam; sourceTree = "<group>"; };
+		DA3E07811371CC6F0048E006 /* ssl_certificate_db.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_certificate_db.beam; sourceTree = "<group>"; };
+		DA3E07821371CC6F0048E006 /* ssl_cipher.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_cipher.beam; sourceTree = "<group>"; };
+		DA3E07831371CC6F0048E006 /* ssl_connection.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_connection.beam; sourceTree = "<group>"; };
+		DA3E07841371CC6F0048E006 /* ssl_connection_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_connection_sup.beam; sourceTree = "<group>"; };
+		DA3E07851371CC6F0048E006 /* ssl_debug.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_debug.beam; sourceTree = "<group>"; };
+		DA3E07861371CC6F0048E006 /* ssl_handshake.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_handshake.beam; sourceTree = "<group>"; };
+		DA3E07871371CC6F0048E006 /* ssl_manager.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_manager.beam; sourceTree = "<group>"; };
+		DA3E07881371CC6F0048E006 /* ssl_pem.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_pem.beam; sourceTree = "<group>"; };
+		DA3E07891371CC6F0048E006 /* ssl_pkix.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_pkix.beam; sourceTree = "<group>"; };
+		DA3E078A1371CC6F0048E006 /* ssl_pkix_oid.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_pkix_oid.beam; sourceTree = "<group>"; };
+		DA3E078B1371CC6F0048E006 /* ssl_prim.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_prim.beam; sourceTree = "<group>"; };
+		DA3E078C1371CC6F0048E006 /* ssl_record.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_record.beam; sourceTree = "<group>"; };
+		DA3E078D1371CC6F0048E006 /* ssl_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_server.beam; sourceTree = "<group>"; };
+		DA3E078E1371CC6F0048E006 /* ssl_session.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_session.beam; sourceTree = "<group>"; };
+		DA3E078F1371CC6F0048E006 /* ssl_session_cache.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_session_cache.beam; sourceTree = "<group>"; };
+		DA3E07901371CC6F0048E006 /* ssl_session_cache_api.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_session_cache_api.beam; sourceTree = "<group>"; };
+		DA3E07911371CC6F0048E006 /* ssl_ssl2.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_ssl2.beam; sourceTree = "<group>"; };
+		DA3E07921371CC6F0048E006 /* ssl_ssl3.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_ssl3.beam; sourceTree = "<group>"; };
+		DA3E07931371CC6F0048E006 /* ssl_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_sup.beam; sourceTree = "<group>"; };
+		DA3E07941371CC6F0048E006 /* ssl_tls1.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_tls1.beam; sourceTree = "<group>"; };
+		DA3E07961371CC6F0048E006 /* OTP-PKIX.asn1config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OTP-PKIX.asn1config"; sourceTree = "<group>"; };
+		DA3E07971371CC6F0048E006 /* OTP-PKIX.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OTP-PKIX.hrl"; sourceTree = "<group>"; };
+		DA3E07981371CC6F0048E006 /* PKIX1Algorithms88.asn1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Algorithms88.asn1; sourceTree = "<group>"; };
+		DA3E07991371CC6F0048E006 /* PKIX1Algorithms88.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Algorithms88.hrl; sourceTree = "<group>"; };
+		DA3E079A1371CC6F0048E006 /* PKIX1Explicit88.asn1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Explicit88.asn1; sourceTree = "<group>"; };
+		DA3E079B1371CC6F0048E006 /* PKIX1Explicit88.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Explicit88.hrl; sourceTree = "<group>"; };
+		DA3E079C1371CC6F0048E006 /* PKIX1Implicit88.asn1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Implicit88.asn1; sourceTree = "<group>"; };
+		DA3E079D1371CC6F0048E006 /* PKIX1Implicit88.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIX1Implicit88.hrl; sourceTree = "<group>"; };
+		DA3E079E1371CC6F0048E006 /* PKIXAttributeCertificate.asn1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIXAttributeCertificate.asn1; sourceTree = "<group>"; };
+		DA3E079F1371CC6F0048E006 /* PKIXAttributeCertificate.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PKIXAttributeCertificate.hrl; sourceTree = "<group>"; };
+		DA3E07A01371CC6F0048E006 /* SSL-PKIX.asn1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SSL-PKIX.asn1"; sourceTree = "<group>"; };
+		DA3E07A31371CC6F0048E006 /* ssl_esock */ = {isa = PBXFileReference; lastKnownFileType = file; path = ssl_esock; sourceTree = "<group>"; };
+		DA3E07A51371CC6F0048E006 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		DA3E07A81371CC6F0048E006 /* array.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = array.beam; sourceTree = "<group>"; };
+		DA3E07A91371CC6F0048E006 /* base64.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = base64.beam; sourceTree = "<group>"; };
+		DA3E07AA1371CC6F0048E006 /* beam_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = beam_lib.beam; sourceTree = "<group>"; };
+		DA3E07AB1371CC6F0048E006 /* c.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = c.beam; sourceTree = "<group>"; };
+		DA3E07AC1371CC6F0048E006 /* calendar.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = calendar.beam; sourceTree = "<group>"; };
+		DA3E07AD1371CC6F0048E006 /* dets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets.beam; sourceTree = "<group>"; };
+		DA3E07AE1371CC6F0048E006 /* dets_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets_server.beam; sourceTree = "<group>"; };
+		DA3E07AF1371CC6F0048E006 /* dets_sup.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets_sup.beam; sourceTree = "<group>"; };
+		DA3E07B01371CC6F0048E006 /* dets_utils.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets_utils.beam; sourceTree = "<group>"; };
+		DA3E07B11371CC6F0048E006 /* dets_v8.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets_v8.beam; sourceTree = "<group>"; };
+		DA3E07B21371CC6F0048E006 /* dets_v9.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dets_v9.beam; sourceTree = "<group>"; };
+		DA3E07B31371CC6F0048E006 /* dict.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = dict.beam; sourceTree = "<group>"; };
+		DA3E07B41371CC6F0048E006 /* digraph.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = digraph.beam; sourceTree = "<group>"; };
+		DA3E07B51371CC6F0048E006 /* digraph_utils.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = digraph_utils.beam; sourceTree = "<group>"; };
+		DA3E07B61371CC6F0048E006 /* edlin.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = edlin.beam; sourceTree = "<group>"; };
+		DA3E07B71371CC6F0048E006 /* edlin_expand.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = edlin_expand.beam; sourceTree = "<group>"; };
+		DA3E07B81371CC6F0048E006 /* epp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = epp.beam; sourceTree = "<group>"; };
+		DA3E07B91371CC6F0048E006 /* erl_bits.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_bits.beam; sourceTree = "<group>"; };
+		DA3E07BA1371CC6F0048E006 /* erl_compile.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_compile.beam; sourceTree = "<group>"; };
+		DA3E07BB1371CC6F0048E006 /* erl_eval.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_eval.beam; sourceTree = "<group>"; };
+		DA3E07BC1371CC6F0048E006 /* erl_expand_records.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_expand_records.beam; sourceTree = "<group>"; };
+		DA3E07BD1371CC6F0048E006 /* erl_internal.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_internal.beam; sourceTree = "<group>"; };
+		DA3E07BE1371CC6F0048E006 /* erl_lint.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_lint.beam; sourceTree = "<group>"; };
+		DA3E07BF1371CC6F0048E006 /* erl_parse.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_parse.beam; sourceTree = "<group>"; };
+		DA3E07C01371CC6F0048E006 /* erl_posix_msg.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_posix_msg.beam; sourceTree = "<group>"; };
+		DA3E07C11371CC6F0048E006 /* erl_pp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_pp.beam; sourceTree = "<group>"; };
+		DA3E07C21371CC6F0048E006 /* erl_scan.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_scan.beam; sourceTree = "<group>"; };
+		DA3E07C31371CC6F0048E006 /* erl_tar.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = erl_tar.beam; sourceTree = "<group>"; };
+		DA3E07C41371CC6F0048E006 /* error_logger_file_h.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = error_logger_file_h.beam; sourceTree = "<group>"; };
+		DA3E07C51371CC6F0048E006 /* error_logger_tty_h.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = error_logger_tty_h.beam; sourceTree = "<group>"; };
+		DA3E07C61371CC6F0048E006 /* escript.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = escript.beam; sourceTree = "<group>"; };
+		DA3E07C71371CC6F0048E006 /* ets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ets.beam; sourceTree = "<group>"; };
+		DA3E07C81371CC6F0048E006 /* eval_bits.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = eval_bits.beam; sourceTree = "<group>"; };
+		DA3E07C91371CC6F0048E006 /* file_sorter.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = file_sorter.beam; sourceTree = "<group>"; };
+		DA3E07CA1371CC6F0048E006 /* filelib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = filelib.beam; sourceTree = "<group>"; };
+		DA3E07CB1371CC6F0048E006 /* filename.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = filename.beam; sourceTree = "<group>"; };
+		DA3E07CC1371CC6F0048E006 /* gb_sets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gb_sets.beam; sourceTree = "<group>"; };
+		DA3E07CD1371CC6F0048E006 /* gb_trees.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gb_trees.beam; sourceTree = "<group>"; };
+		DA3E07CE1371CC6F0048E006 /* gen.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen.beam; sourceTree = "<group>"; };
+		DA3E07CF1371CC6F0048E006 /* gen_event.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_event.beam; sourceTree = "<group>"; };
+		DA3E07D01371CC6F0048E006 /* gen_fsm.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_fsm.beam; sourceTree = "<group>"; };
+		DA3E07D11371CC6F0048E006 /* gen_server.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = gen_server.beam; sourceTree = "<group>"; };
+		DA3E07D21371CC6F0048E006 /* io.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = io.beam; sourceTree = "<group>"; };
+		DA3E07D31371CC6F0048E006 /* io_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = io_lib.beam; sourceTree = "<group>"; };
+		DA3E07D41371CC6F0048E006 /* io_lib_format.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = io_lib_format.beam; sourceTree = "<group>"; };
+		DA3E07D51371CC6F0048E006 /* io_lib_fread.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = io_lib_fread.beam; sourceTree = "<group>"; };
+		DA3E07D61371CC6F0048E006 /* io_lib_pretty.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = io_lib_pretty.beam; sourceTree = "<group>"; };
+		DA3E07D71371CC6F0048E006 /* lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = lib.beam; sourceTree = "<group>"; };
+		DA3E07D81371CC6F0048E006 /* lists.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = lists.beam; sourceTree = "<group>"; };
+		DA3E07D91371CC6F0048E006 /* log_mf_h.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = log_mf_h.beam; sourceTree = "<group>"; };
+		DA3E07DA1371CC6F0048E006 /* math.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = math.beam; sourceTree = "<group>"; };
+		DA3E07DB1371CC6F0048E006 /* ms_transform.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ms_transform.beam; sourceTree = "<group>"; };
+		DA3E07DC1371CC6F0048E006 /* orddict.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = orddict.beam; sourceTree = "<group>"; };
+		DA3E07DD1371CC6F0048E006 /* ordsets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = ordsets.beam; sourceTree = "<group>"; };
+		DA3E07DE1371CC6F0048E006 /* otp_internal.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = otp_internal.beam; sourceTree = "<group>"; };
+		DA3E07DF1371CC6F0048E006 /* pg.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = pg.beam; sourceTree = "<group>"; };
+		DA3E07E01371CC6F0048E006 /* pool.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = pool.beam; sourceTree = "<group>"; };
+		DA3E07E11371CC6F0048E006 /* proc_lib.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = proc_lib.beam; sourceTree = "<group>"; };
+		DA3E07E21371CC6F0048E006 /* proplists.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = proplists.beam; sourceTree = "<group>"; };
+		DA3E07E31371CC6F0048E006 /* qlc.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = qlc.beam; sourceTree = "<group>"; };
+		DA3E07E41371CC6F0048E006 /* qlc_pt.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = qlc_pt.beam; sourceTree = "<group>"; };
+		DA3E07E51371CC6F0048E006 /* queue.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = queue.beam; sourceTree = "<group>"; };
+		DA3E07E61371CC6F0048E006 /* random.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = random.beam; sourceTree = "<group>"; };
+		DA3E07E71371CC6F0048E006 /* re.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = re.beam; sourceTree = "<group>"; };
+		DA3E07E81371CC6F0048E006 /* regexp.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = regexp.beam; sourceTree = "<group>"; };
+		DA3E07E91371CC6F0048E006 /* sets.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sets.beam; sourceTree = "<group>"; };
+		DA3E07EA1371CC6F0048E006 /* shell.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = shell.beam; sourceTree = "<group>"; };
+		DA3E07EB1371CC6F0048E006 /* shell_default.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = shell_default.beam; sourceTree = "<group>"; };
+		DA3E07EC1371CC6F0048E006 /* slave.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = slave.beam; sourceTree = "<group>"; };
+		DA3E07ED1371CC6F0048E006 /* sofs.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sofs.beam; sourceTree = "<group>"; };
+		DA3E07EE1371CC6F0048E006 /* stdlib.app */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stdlib.app; sourceTree = "<group>"; };
+		DA3E07EF1371CC6F0048E006 /* stdlib.appup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stdlib.appup; sourceTree = "<group>"; };
+		DA3E07F01371CC6F0048E006 /* string.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = string.beam; sourceTree = "<group>"; };
+		DA3E07F11371CC6F0048E006 /* supervisor.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = supervisor.beam; sourceTree = "<group>"; };
+		DA3E07F21371CC6F0048E006 /* supervisor_bridge.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = supervisor_bridge.beam; sourceTree = "<group>"; };
+		DA3E07F31371CC6F0048E006 /* sys.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = sys.beam; sourceTree = "<group>"; };
+		DA3E07F41371CC6F0048E006 /* timer.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = timer.beam; sourceTree = "<group>"; };
+		DA3E07F51371CC6F0048E006 /* unicode.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = unicode.beam; sourceTree = "<group>"; };
+		DA3E07F61371CC6F0048E006 /* win32reg.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = win32reg.beam; sourceTree = "<group>"; };
+		DA3E07F71371CC6F0048E006 /* zip.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = zip.beam; sourceTree = "<group>"; };
+		DA3E07F91371CC6F0048E006 /* dets.hrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dets.hrl; sourceTree = "<group>"; };
+		DA3E07FA1371CC6F0048E006 /* erl_parse.yrl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = erl_parse.yrl; sourceTree = "<group>"; };
+		DA3E07FD1371CC6F0048E006 /* xmerl_ucs.beam */ = {isa = PBXFileReference; lastKnownFileType = file; path = xmerl_ucs.beam; sourceTree = "<group>"; };
+		DA3E07FE1371CC6F0048E006 /* icouch.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = icouch.ini; path = "iOS-Couchbase/MobileCouchbase/icouch.ini"; sourceTree = "<group>"; };
 		DAD0903613704DB700E6EF5C /* libCouchbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCouchbase.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -80,7 +540,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD0903713704DB700E6EF5C /* libCouchbase.a in Frameworks */,
+				DA155A831371C0A1006FCC18 /* libCouchbase.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +561,9 @@
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
+				DA3E060E1371CC590048E006 /* Couchbase assets */,
 				DA7B9E47136F515D008C13E0 /* Dependencies */,
+				DA155A841371C1B0006FCC18 /* Libraries */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -137,21 +599,828 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		DA155A691371C078006FCC18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA155A791371C078006FCC18 /* libCouchbase.a */,
+				DA155A7B1371C078006FCC18 /* Couchbase.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA155A841371C1B0006FCC18 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				DA155A821371C0A1006FCC18 /* libCouchbase.a */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		DA3E060E1371CC590048E006 /* Couchbase assets */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E060F1371CC6F0048E006 /* demo.couch */,
+				DA3E06101371CC6F0048E006 /* erlang */,
+				DA3E07FE1371CC6F0048E006 /* icouch.ini */,
+				DA3E060C1371CC490048E006 /* default.ini */,
+			);
+			name = "Couchbase assets";
+			sourceTree = "<group>";
+		};
+		DA3E06101371CC6F0048E006 /* erlang */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06111371CC6F0048E006 /* bin */,
+				DA3E06151371CC6F0048E006 /* emonk_app.js */,
+				DA3E06161371CC6F0048E006 /* emonk_mapred.js */,
+				DA3E06171371CC6F0048E006 /* erl_inetrc */,
+				DA3E06181371CC6F0048E006 /* lib */,
+			);
+			name = erlang;
+			path = "iOS-Couchbase/MobileCouchbase/erlang";
+			sourceTree = "<group>";
+		};
+		DA3E06111371CC6F0048E006 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06121371CC6F0048E006 /* start.boot */,
+				DA3E06131371CC6F0048E006 /* start_clean.boot */,
+				DA3E06141371CC6F0048E006 /* start_sasl.boot */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		DA3E06181371CC6F0048E006 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06191371CC6F0048E006 /* couch-0.12 */,
+				DA3E06601371CC6F0048E006 /* crypto-1.6.4 */,
+				DA3E066B1371CC6F0048E006 /* emonk */,
+				DA3E066F1371CC6F0048E006 /* erlang-oauth */,
+				DA3E06781371CC6F0048E006 /* erts-5.7.5 */,
+				DA3E06821371CC6F0048E006 /* ibrowse */,
+				DA3E068C1371CC6F0048E006 /* inets-5.3 */,
+				DA3E06E51371CC6F0048E006 /* kernel-2.13.5 */,
+				DA3E07361371CC6F0048E006 /* mochiweb */,
+				DA3E075A1371CC6F0048E006 /* sasl-2.1.9 */,
+				DA3E07741371CC6F0048E006 /* ssl-3.10.8 */,
+				DA3E07A61371CC6F0048E006 /* stdlib-1.16.5 */,
+				DA3E07FB1371CC6F0048E006 /* xmerl-1.2.4 */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DA3E06191371CC6F0048E006 /* couch-0.12 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E061A1371CC6F0048E006 /* ebin */,
+				DA3E065A1371CC6F0048E006 /* priv */,
+			);
+			path = "couch-0.12";
+			sourceTree = "<group>";
+		};
+		DA3E061A1371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E061B1371CC6F0048E006 /* couch.app */,
+				DA3E061C1371CC6F0048E006 /* couch.beam */,
+				DA3E061D1371CC6F0048E006 /* couch_app.beam */,
+				DA3E061E1371CC6F0048E006 /* couch_app_server.beam */,
+				DA3E061F1371CC6F0048E006 /* couch_app_server_emonk.beam */,
+				DA3E06201371CC6F0048E006 /* couch_app_server_erlang.beam */,
+				DA3E06211371CC6F0048E006 /* couch_auth_cache.beam */,
+				DA3E06221371CC6F0048E006 /* couch_btree.beam */,
+				DA3E06231371CC6F0048E006 /* couch_changes.beam */,
+				DA3E06241371CC6F0048E006 /* couch_config.beam */,
+				DA3E06251371CC6F0048E006 /* couch_config_writer.beam */,
+				DA3E06261371CC6F0048E006 /* couch_db.beam */,
+				DA3E06271371CC6F0048E006 /* couch_db_update_notifier.beam */,
+				DA3E06281371CC6F0048E006 /* couch_db_update_notifier_sup.beam */,
+				DA3E06291371CC6F0048E006 /* couch_db_updater.beam */,
+				DA3E062A1371CC6F0048E006 /* couch_doc.beam */,
+				DA3E062B1371CC6F0048E006 /* couch_event_sup.beam */,
+				DA3E062C1371CC6F0048E006 /* couch_external_manager.beam */,
+				DA3E062D1371CC6F0048E006 /* couch_external_server.beam */,
+				DA3E062E1371CC6F0048E006 /* couch_file.beam */,
+				DA3E062F1371CC6F0048E006 /* couch_httpd.beam */,
+				DA3E06301371CC6F0048E006 /* couch_httpd_auth.beam */,
+				DA3E06311371CC6F0048E006 /* couch_httpd_db.beam */,
+				DA3E06321371CC6F0048E006 /* couch_httpd_external.beam */,
+				DA3E06331371CC6F0048E006 /* couch_httpd_misc_handlers.beam */,
+				DA3E06341371CC6F0048E006 /* couch_httpd_oauth.beam */,
+				DA3E06351371CC6F0048E006 /* couch_httpd_rewrite.beam */,
+				DA3E06361371CC6F0048E006 /* couch_httpd_show.beam */,
+				DA3E06371371CC6F0048E006 /* couch_httpd_stats_handlers.beam */,
+				DA3E06381371CC6F0048E006 /* couch_httpd_vhost.beam */,
+				DA3E06391371CC6F0048E006 /* couch_httpd_view.beam */,
+				DA3E063A1371CC6F0048E006 /* couch_key_tree.beam */,
+				DA3E063B1371CC6F0048E006 /* couch_log.beam */,
+				DA3E063C1371CC6F0048E006 /* couch_native_process.beam */,
+				DA3E063D1371CC6F0048E006 /* couch_os_process.beam */,
+				DA3E063E1371CC6F0048E006 /* couch_query_servers.beam */,
+				DA3E063F1371CC6F0048E006 /* couch_ref_counter.beam */,
+				DA3E06401371CC6F0048E006 /* couch_rep.beam */,
+				DA3E06411371CC6F0048E006 /* couch_rep_att.beam */,
+				DA3E06421371CC6F0048E006 /* couch_rep_changes_feed.beam */,
+				DA3E06431371CC6F0048E006 /* couch_rep_db_listener.beam */,
+				DA3E06441371CC6F0048E006 /* couch_rep_httpc.beam */,
+				DA3E06451371CC6F0048E006 /* couch_rep_missing_revs.beam */,
+				DA3E06461371CC6F0048E006 /* couch_rep_reader.beam */,
+				DA3E06471371CC6F0048E006 /* couch_rep_sup.beam */,
+				DA3E06481371CC6F0048E006 /* couch_rep_writer.beam */,
+				DA3E06491371CC6F0048E006 /* couch_server.beam */,
+				DA3E064A1371CC6F0048E006 /* couch_server_sup.beam */,
+				DA3E064B1371CC6F0048E006 /* couch_stats_aggregator.beam */,
+				DA3E064C1371CC6F0048E006 /* couch_stats_collector.beam */,
+				DA3E064D1371CC6F0048E006 /* couch_stream.beam */,
+				DA3E064E1371CC6F0048E006 /* couch_task_status.beam */,
+				DA3E064F1371CC6F0048E006 /* couch_util.beam */,
+				DA3E06501371CC6F0048E006 /* couch_uuids.beam */,
+				DA3E06511371CC6F0048E006 /* couch_view.beam */,
+				DA3E06521371CC6F0048E006 /* couch_view_compactor.beam */,
+				DA3E06531371CC6F0048E006 /* couch_view_group.beam */,
+				DA3E06541371CC6F0048E006 /* couch_view_server.beam */,
+				DA3E06551371CC6F0048E006 /* couch_view_server_emonk.beam */,
+				DA3E06561371CC6F0048E006 /* couch_view_server_erlang.beam */,
+				DA3E06571371CC6F0048E006 /* couch_view_server_os.beam */,
+				DA3E06581371CC6F0048E006 /* couch_view_updater.beam */,
+				DA3E06591371CC6F0048E006 /* couch_work_queue.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E065A1371CC6F0048E006 /* priv */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E065B1371CC6F0048E006 /* couchspawnkillable */,
+				DA3E065C1371CC6F0048E006 /* lib */,
+				DA3E065F1371CC6F0048E006 /* stat_descriptions.cfg */,
+			);
+			path = priv;
+			sourceTree = "<group>";
+		};
+		DA3E065C1371CC6F0048E006 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E065D1371CC6F0048E006 /* couch_icu_driver.la */,
+				DA3E065E1371CC6F0048E006 /* libcouch_icu_driver.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DA3E06601371CC6F0048E006 /* crypto-1.6.4 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06611371CC6F0048E006 /* ebin */,
+				DA3E06681371CC6F0048E006 /* priv */,
+			);
+			path = "crypto-1.6.4";
+			sourceTree = "<group>";
+		};
+		DA3E06611371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06621371CC6F0048E006 /* crypto.app */,
+				DA3E06631371CC6F0048E006 /* crypto.appup */,
+				DA3E06641371CC6F0048E006 /* crypto.beam */,
+				DA3E06651371CC6F0048E006 /* crypto_app.beam */,
+				DA3E06661371CC6F0048E006 /* crypto_server.beam */,
+				DA3E06671371CC6F0048E006 /* crypto_sup.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E06681371CC6F0048E006 /* priv */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06691371CC6F0048E006 /* obj */,
+			);
+			path = priv;
+			sourceTree = "<group>";
+		};
+		DA3E06691371CC6F0048E006 /* obj */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E066A1371CC6F0048E006 /* Makefile */,
+			);
+			path = obj;
+			sourceTree = "<group>";
+		};
+		DA3E066B1371CC6F0048E006 /* emonk */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E066C1371CC6F0048E006 /* ebin */,
+			);
+			path = emonk;
+			sourceTree = "<group>";
+		};
+		DA3E066C1371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E066D1371CC6F0048E006 /* emonk.app */,
+				DA3E066E1371CC6F0048E006 /* emonk.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E066F1371CC6F0048E006 /* erlang-oauth */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06701371CC6F0048E006 /* ebin */,
+			);
+			path = "erlang-oauth";
+			sourceTree = "<group>";
+		};
+		DA3E06701371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06711371CC6F0048E006 /* oauth.app */,
+				DA3E06721371CC6F0048E006 /* oauth.beam */,
+				DA3E06731371CC6F0048E006 /* oauth_hmac_sha1.beam */,
+				DA3E06741371CC6F0048E006 /* oauth_http.beam */,
+				DA3E06751371CC6F0048E006 /* oauth_plaintext.beam */,
+				DA3E06761371CC6F0048E006 /* oauth_unix.beam */,
+				DA3E06771371CC6F0048E006 /* oauth_uri.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E06781371CC6F0048E006 /* erts-5.7.5 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06791371CC6F0048E006 /* ebin */,
+			);
+			path = "erts-5.7.5";
+			sourceTree = "<group>";
+		};
+		DA3E06791371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E067A1371CC6F0048E006 /* erl_prim_loader.beam */,
+				DA3E067B1371CC6F0048E006 /* erlang.beam */,
+				DA3E067C1371CC6F0048E006 /* init.beam */,
+				DA3E067D1371CC6F0048E006 /* otp_ring0.beam */,
+				DA3E067E1371CC6F0048E006 /* prim_file.beam */,
+				DA3E067F1371CC6F0048E006 /* prim_inet.beam */,
+				DA3E06801371CC6F0048E006 /* prim_zip.beam */,
+				DA3E06811371CC6F0048E006 /* zlib.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E06821371CC6F0048E006 /* ibrowse */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06831371CC6F0048E006 /* ibrowse.app */,
+				DA3E06841371CC6F0048E006 /* ibrowse.beam */,
+				DA3E06851371CC6F0048E006 /* ibrowse.hrl */,
+				DA3E06861371CC6F0048E006 /* ibrowse_app.beam */,
+				DA3E06871371CC6F0048E006 /* ibrowse_http_client.beam */,
+				DA3E06881371CC6F0048E006 /* ibrowse_lb.beam */,
+				DA3E06891371CC6F0048E006 /* ibrowse_lib.beam */,
+				DA3E068A1371CC6F0048E006 /* ibrowse_sup.beam */,
+				DA3E068B1371CC6F0048E006 /* ibrowse_test.beam */,
+			);
+			path = ibrowse;
+			sourceTree = "<group>";
+		};
+		DA3E068C1371CC6F0048E006 /* inets-5.3 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E068D1371CC6F0048E006 /* ebin */,
+				DA3E06D91371CC6F0048E006 /* priv */,
+				DA3E06DC1371CC6F0048E006 /* src */,
+			);
+			path = "inets-5.3";
+			sourceTree = "<group>";
+		};
+		DA3E068D1371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E068E1371CC6F0048E006 /* ftp.beam */,
+				DA3E068F1371CC6F0048E006 /* ftp_progress.beam */,
+				DA3E06901371CC6F0048E006 /* ftp_response.beam */,
+				DA3E06911371CC6F0048E006 /* ftp_sup.beam */,
+				DA3E06921371CC6F0048E006 /* http.beam */,
+				DA3E06931371CC6F0048E006 /* http_chunk.beam */,
+				DA3E06941371CC6F0048E006 /* http_request.beam */,
+				DA3E06951371CC6F0048E006 /* http_response.beam */,
+				DA3E06961371CC6F0048E006 /* http_transport.beam */,
+				DA3E06971371CC6F0048E006 /* http_uri.beam */,
+				DA3E06981371CC6F0048E006 /* http_util.beam */,
+				DA3E06991371CC6F0048E006 /* httpc.beam */,
+				DA3E069A1371CC6F0048E006 /* httpc_cookie.beam */,
+				DA3E069B1371CC6F0048E006 /* httpc_handler.beam */,
+				DA3E069C1371CC6F0048E006 /* httpc_handler_sup.beam */,
+				DA3E069D1371CC6F0048E006 /* httpc_manager.beam */,
+				DA3E069E1371CC6F0048E006 /* httpc_profile_sup.beam */,
+				DA3E069F1371CC6F0048E006 /* httpc_request.beam */,
+				DA3E06A01371CC6F0048E006 /* httpc_response.beam */,
+				DA3E06A11371CC6F0048E006 /* httpc_sup.beam */,
+				DA3E06A21371CC6F0048E006 /* httpd.beam */,
+				DA3E06A31371CC6F0048E006 /* httpd_acceptor.beam */,
+				DA3E06A41371CC6F0048E006 /* httpd_acceptor_sup.beam */,
+				DA3E06A51371CC6F0048E006 /* httpd_cgi.beam */,
+				DA3E06A61371CC6F0048E006 /* httpd_conf.beam */,
+				DA3E06A71371CC6F0048E006 /* httpd_esi.beam */,
+				DA3E06A81371CC6F0048E006 /* httpd_example.beam */,
+				DA3E06A91371CC6F0048E006 /* httpd_file.beam */,
+				DA3E06AA1371CC6F0048E006 /* httpd_instance_sup.beam */,
+				DA3E06AB1371CC6F0048E006 /* httpd_log.beam */,
+				DA3E06AC1371CC6F0048E006 /* httpd_manager.beam */,
+				DA3E06AD1371CC6F0048E006 /* httpd_misc_sup.beam */,
+				DA3E06AE1371CC6F0048E006 /* httpd_request.beam */,
+				DA3E06AF1371CC6F0048E006 /* httpd_request_handler.beam */,
+				DA3E06B01371CC6F0048E006 /* httpd_response.beam */,
+				DA3E06B11371CC6F0048E006 /* httpd_script_env.beam */,
+				DA3E06B21371CC6F0048E006 /* httpd_socket.beam */,
+				DA3E06B31371CC6F0048E006 /* httpd_sup.beam */,
+				DA3E06B41371CC6F0048E006 /* httpd_util.beam */,
+				DA3E06B51371CC6F0048E006 /* inets.app */,
+				DA3E06B61371CC6F0048E006 /* inets.appup */,
+				DA3E06B71371CC6F0048E006 /* inets.beam */,
+				DA3E06B81371CC6F0048E006 /* inets_app.beam */,
+				DA3E06B91371CC6F0048E006 /* inets_regexp.beam */,
+				DA3E06BA1371CC6F0048E006 /* inets_service.beam */,
+				DA3E06BB1371CC6F0048E006 /* inets_sup.beam */,
+				DA3E06BC1371CC6F0048E006 /* mod_actions.beam */,
+				DA3E06BD1371CC6F0048E006 /* mod_alias.beam */,
+				DA3E06BE1371CC6F0048E006 /* mod_auth.beam */,
+				DA3E06BF1371CC6F0048E006 /* mod_auth_dets.beam */,
+				DA3E06C01371CC6F0048E006 /* mod_auth_mnesia.beam */,
+				DA3E06C11371CC6F0048E006 /* mod_auth_plain.beam */,
+				DA3E06C21371CC6F0048E006 /* mod_auth_server.beam */,
+				DA3E06C31371CC6F0048E006 /* mod_browser.beam */,
+				DA3E06C41371CC6F0048E006 /* mod_cgi.beam */,
+				DA3E06C51371CC6F0048E006 /* mod_dir.beam */,
+				DA3E06C61371CC6F0048E006 /* mod_disk_log.beam */,
+				DA3E06C71371CC6F0048E006 /* mod_esi.beam */,
+				DA3E06C81371CC6F0048E006 /* mod_get.beam */,
+				DA3E06C91371CC6F0048E006 /* mod_head.beam */,
+				DA3E06CA1371CC6F0048E006 /* mod_htaccess.beam */,
+				DA3E06CB1371CC6F0048E006 /* mod_include.beam */,
+				DA3E06CC1371CC6F0048E006 /* mod_log.beam */,
+				DA3E06CD1371CC6F0048E006 /* mod_range.beam */,
+				DA3E06CE1371CC6F0048E006 /* mod_responsecontrol.beam */,
+				DA3E06CF1371CC6F0048E006 /* mod_security.beam */,
+				DA3E06D01371CC6F0048E006 /* mod_security_server.beam */,
+				DA3E06D11371CC6F0048E006 /* mod_trace.beam */,
+				DA3E06D21371CC6F0048E006 /* tftp.beam */,
+				DA3E06D31371CC6F0048E006 /* tftp_binary.beam */,
+				DA3E06D41371CC6F0048E006 /* tftp_engine.beam */,
+				DA3E06D51371CC6F0048E006 /* tftp_file.beam */,
+				DA3E06D61371CC6F0048E006 /* tftp_lib.beam */,
+				DA3E06D71371CC6F0048E006 /* tftp_logger.beam */,
+				DA3E06D81371CC6F0048E006 /* tftp_sup.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E06D91371CC6F0048E006 /* priv */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06DA1371CC6F0048E006 /* bin */,
+			);
+			path = priv;
+			sourceTree = "<group>";
+		};
+		DA3E06DA1371CC6F0048E006 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06DB1371CC6F0048E006 /* runcgi.sh */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		DA3E06DC1371CC6F0048E006 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06DD1371CC6F0048E006 /* ftp_internal.hrl */,
+				DA3E06DE1371CC6F0048E006 /* http_internal.hrl */,
+				DA3E06DF1371CC6F0048E006 /* httpc_internal.hrl */,
+				DA3E06E01371CC6F0048E006 /* httpd.hrl */,
+				DA3E06E11371CC6F0048E006 /* httpd_internal.hrl */,
+				DA3E06E21371CC6F0048E006 /* inets_internal.hrl */,
+				DA3E06E31371CC6F0048E006 /* mod_auth.hrl */,
+				DA3E06E41371CC6F0048E006 /* tftp.hrl */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DA3E06E51371CC6F0048E006 /* kernel-2.13.5 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06E61371CC6F0048E006 /* ebin */,
+				DA3E072A1371CC6F0048E006 /* src */,
+			);
+			path = "kernel-2.13.5";
+			sourceTree = "<group>";
+		};
+		DA3E06E61371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E06E71371CC6F0048E006 /* application.beam */,
+				DA3E06E81371CC6F0048E006 /* application_controller.beam */,
+				DA3E06E91371CC6F0048E006 /* application_master.beam */,
+				DA3E06EA1371CC6F0048E006 /* application_starter.beam */,
+				DA3E06EB1371CC6F0048E006 /* auth.beam */,
+				DA3E06EC1371CC6F0048E006 /* code.beam */,
+				DA3E06ED1371CC6F0048E006 /* code_server.beam */,
+				DA3E06EE1371CC6F0048E006 /* disk_log.beam */,
+				DA3E06EF1371CC6F0048E006 /* disk_log_1.beam */,
+				DA3E06F01371CC6F0048E006 /* disk_log_server.beam */,
+				DA3E06F11371CC6F0048E006 /* disk_log_sup.beam */,
+				DA3E06F21371CC6F0048E006 /* dist_ac.beam */,
+				DA3E06F31371CC6F0048E006 /* dist_util.beam */,
+				DA3E06F41371CC6F0048E006 /* erl_boot_server.beam */,
+				DA3E06F51371CC6F0048E006 /* erl_ddll.beam */,
+				DA3E06F61371CC6F0048E006 /* erl_distribution.beam */,
+				DA3E06F71371CC6F0048E006 /* erl_epmd.beam */,
+				DA3E06F81371CC6F0048E006 /* erl_reply.beam */,
+				DA3E06F91371CC6F0048E006 /* error_handler.beam */,
+				DA3E06FA1371CC6F0048E006 /* error_logger.beam */,
+				DA3E06FB1371CC6F0048E006 /* erts_debug.beam */,
+				DA3E06FC1371CC6F0048E006 /* file.beam */,
+				DA3E06FD1371CC6F0048E006 /* file_io_server.beam */,
+				DA3E06FE1371CC6F0048E006 /* file_server.beam */,
+				DA3E06FF1371CC6F0048E006 /* gen_sctp.beam */,
+				DA3E07001371CC6F0048E006 /* gen_tcp.beam */,
+				DA3E07011371CC6F0048E006 /* gen_udp.beam */,
+				DA3E07021371CC6F0048E006 /* global.beam */,
+				DA3E07031371CC6F0048E006 /* global_group.beam */,
+				DA3E07041371CC6F0048E006 /* global_search.beam */,
+				DA3E07051371CC6F0048E006 /* group.beam */,
+				DA3E07061371CC6F0048E006 /* heart.beam */,
+				DA3E07071371CC6F0048E006 /* hipe_unified_loader.beam */,
+				DA3E07081371CC6F0048E006 /* inet.beam */,
+				DA3E07091371CC6F0048E006 /* inet6_sctp.beam */,
+				DA3E070A1371CC6F0048E006 /* inet6_tcp.beam */,
+				DA3E070B1371CC6F0048E006 /* inet6_tcp_dist.beam */,
+				DA3E070C1371CC6F0048E006 /* inet6_udp.beam */,
+				DA3E070D1371CC6F0048E006 /* inet_config.beam */,
+				DA3E070E1371CC6F0048E006 /* inet_db.beam */,
+				DA3E070F1371CC6F0048E006 /* inet_dns.beam */,
+				DA3E07101371CC6F0048E006 /* inet_gethost_native.beam */,
+				DA3E07111371CC6F0048E006 /* inet_hosts.beam */,
+				DA3E07121371CC6F0048E006 /* inet_parse.beam */,
+				DA3E07131371CC6F0048E006 /* inet_res.beam */,
+				DA3E07141371CC6F0048E006 /* inet_sctp.beam */,
+				DA3E07151371CC6F0048E006 /* inet_tcp.beam */,
+				DA3E07161371CC6F0048E006 /* inet_tcp_dist.beam */,
+				DA3E07171371CC6F0048E006 /* inet_udp.beam */,
+				DA3E07181371CC6F0048E006 /* kernel.app */,
+				DA3E07191371CC6F0048E006 /* kernel.appup */,
+				DA3E071A1371CC6F0048E006 /* kernel.beam */,
+				DA3E071B1371CC6F0048E006 /* kernel_config.beam */,
+				DA3E071C1371CC6F0048E006 /* net.beam */,
+				DA3E071D1371CC6F0048E006 /* net_adm.beam */,
+				DA3E071E1371CC6F0048E006 /* net_kernel.beam */,
+				DA3E071F1371CC6F0048E006 /* os.beam */,
+				DA3E07201371CC6F0048E006 /* packages.beam */,
+				DA3E07211371CC6F0048E006 /* pg2.beam */,
+				DA3E07221371CC6F0048E006 /* ram_file.beam */,
+				DA3E07231371CC6F0048E006 /* rpc.beam */,
+				DA3E07241371CC6F0048E006 /* seq_trace.beam */,
+				DA3E07251371CC6F0048E006 /* standard_error.beam */,
+				DA3E07261371CC6F0048E006 /* user.beam */,
+				DA3E07271371CC6F0048E006 /* user_drv.beam */,
+				DA3E07281371CC6F0048E006 /* user_sup.beam */,
+				DA3E07291371CC6F0048E006 /* wrap_log_reader.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E072A1371CC6F0048E006 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E072B1371CC6F0048E006 /* application_master.hrl */,
+				DA3E072C1371CC6F0048E006 /* disk_log.hrl */,
+				DA3E072D1371CC6F0048E006 /* dist.hrl */,
+				DA3E072E1371CC6F0048E006 /* dist_util.hrl */,
+				DA3E072F1371CC6F0048E006 /* inet_boot.hrl */,
+				DA3E07301371CC6F0048E006 /* inet_config.hrl */,
+				DA3E07311371CC6F0048E006 /* inet_dns.hrl */,
+				DA3E07321371CC6F0048E006 /* inet_dns_record_adts.hrl */,
+				DA3E07331371CC6F0048E006 /* inet_int.hrl */,
+				DA3E07341371CC6F0048E006 /* inet_res.hrl */,
+				DA3E07351371CC6F0048E006 /* net_address.hrl */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DA3E07361371CC6F0048E006 /* mochiweb */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07371371CC6F0048E006 /* ebin */,
+			);
+			path = mochiweb;
+			sourceTree = "<group>";
+		};
+		DA3E07371371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07381371CC6F0048E006 /* mochifmt.beam */,
+				DA3E07391371CC6F0048E006 /* mochifmt_records.beam */,
+				DA3E073A1371CC6F0048E006 /* mochifmt_std.beam */,
+				DA3E073B1371CC6F0048E006 /* mochiglobal.beam */,
+				DA3E073C1371CC6F0048E006 /* mochihex.beam */,
+				DA3E073D1371CC6F0048E006 /* mochijson.beam */,
+				DA3E073E1371CC6F0048E006 /* mochijson2.beam */,
+				DA3E073F1371CC6F0048E006 /* mochilists.beam */,
+				DA3E07401371CC6F0048E006 /* mochilogfile2.beam */,
+				DA3E07411371CC6F0048E006 /* mochinum.beam */,
+				DA3E07421371CC6F0048E006 /* mochitemp.beam */,
+				DA3E07431371CC6F0048E006 /* mochiutf8.beam */,
+				DA3E07441371CC6F0048E006 /* mochiweb.app */,
+				DA3E07451371CC6F0048E006 /* mochiweb.beam */,
+				DA3E07461371CC6F0048E006 /* mochiweb_acceptor.beam */,
+				DA3E07471371CC6F0048E006 /* mochiweb_app.beam */,
+				DA3E07481371CC6F0048E006 /* mochiweb_charref.beam */,
+				DA3E07491371CC6F0048E006 /* mochiweb_cookies.beam */,
+				DA3E074A1371CC6F0048E006 /* mochiweb_cover.beam */,
+				DA3E074B1371CC6F0048E006 /* mochiweb_echo.beam */,
+				DA3E074C1371CC6F0048E006 /* mochiweb_headers.beam */,
+				DA3E074D1371CC6F0048E006 /* mochiweb_html.beam */,
+				DA3E074E1371CC6F0048E006 /* mochiweb_http.beam */,
+				DA3E074F1371CC6F0048E006 /* mochiweb_io.beam */,
+				DA3E07501371CC6F0048E006 /* mochiweb_mime.beam */,
+				DA3E07511371CC6F0048E006 /* mochiweb_multipart.beam */,
+				DA3E07521371CC6F0048E006 /* mochiweb_request.beam */,
+				DA3E07531371CC6F0048E006 /* mochiweb_response.beam */,
+				DA3E07541371CC6F0048E006 /* mochiweb_skel.beam */,
+				DA3E07551371CC6F0048E006 /* mochiweb_socket.beam */,
+				DA3E07561371CC6F0048E006 /* mochiweb_socket_server.beam */,
+				DA3E07571371CC6F0048E006 /* mochiweb_sup.beam */,
+				DA3E07581371CC6F0048E006 /* mochiweb_util.beam */,
+				DA3E07591371CC6F0048E006 /* reloader.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E075A1371CC6F0048E006 /* sasl-2.1.9 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E075B1371CC6F0048E006 /* ebin */,
+				DA3E07721371CC6F0048E006 /* src */,
+			);
+			path = "sasl-2.1.9";
+			sourceTree = "<group>";
+		};
+		DA3E075B1371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E075C1371CC6F0048E006 /* alarm_handler.beam */,
+				DA3E075D1371CC6F0048E006 /* erlsrv.beam */,
+				DA3E075E1371CC6F0048E006 /* format_lib_supp.beam */,
+				DA3E075F1371CC6F0048E006 /* misc_supp.beam */,
+				DA3E07601371CC6F0048E006 /* overload.beam */,
+				DA3E07611371CC6F0048E006 /* rb.beam */,
+				DA3E07621371CC6F0048E006 /* rb_format_supp.beam */,
+				DA3E07631371CC6F0048E006 /* release_handler.beam */,
+				DA3E07641371CC6F0048E006 /* release_handler_1.beam */,
+				DA3E07651371CC6F0048E006 /* sasl.app */,
+				DA3E07661371CC6F0048E006 /* sasl.appup */,
+				DA3E07671371CC6F0048E006 /* sasl.beam */,
+				DA3E07681371CC6F0048E006 /* sasl_report.beam */,
+				DA3E07691371CC6F0048E006 /* sasl_report_file_h.beam */,
+				DA3E076A1371CC6F0048E006 /* sasl_report_tty_h.beam */,
+				DA3E076B1371CC6F0048E006 /* si.beam */,
+				DA3E076C1371CC6F0048E006 /* si_sasl_supp.beam */,
+				DA3E076D1371CC6F0048E006 /* systools.beam */,
+				DA3E076E1371CC6F0048E006 /* systools_lib.beam */,
+				DA3E076F1371CC6F0048E006 /* systools_make.beam */,
+				DA3E07701371CC6F0048E006 /* systools_rc.beam */,
+				DA3E07711371CC6F0048E006 /* systools_relup.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E07721371CC6F0048E006 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07731371CC6F0048E006 /* systools.hrl */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DA3E07741371CC6F0048E006 /* ssl-3.10.8 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07751371CC6F0048E006 /* ebin */,
+				DA3E07951371CC6F0048E006 /* pkix */,
+				DA3E07A11371CC6F0048E006 /* priv */,
+			);
+			path = "ssl-3.10.8";
+			sourceTree = "<group>";
+		};
+		DA3E07751371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07761371CC6F0048E006 /* inet_ssl_dist.beam */,
+				DA3E07771371CC6F0048E006 /* OTP-PKIX.beam */,
+				DA3E07781371CC6F0048E006 /* ssl.app */,
+				DA3E07791371CC6F0048E006 /* ssl.appup */,
+				DA3E077A1371CC6F0048E006 /* ssl.beam */,
+				DA3E077B1371CC6F0048E006 /* ssl_alert.beam */,
+				DA3E077C1371CC6F0048E006 /* ssl_app.beam */,
+				DA3E077D1371CC6F0048E006 /* ssl_base64.beam */,
+				DA3E077E1371CC6F0048E006 /* ssl_broker.beam */,
+				DA3E077F1371CC6F0048E006 /* ssl_broker_sup.beam */,
+				DA3E07801371CC6F0048E006 /* ssl_certificate.beam */,
+				DA3E07811371CC6F0048E006 /* ssl_certificate_db.beam */,
+				DA3E07821371CC6F0048E006 /* ssl_cipher.beam */,
+				DA3E07831371CC6F0048E006 /* ssl_connection.beam */,
+				DA3E07841371CC6F0048E006 /* ssl_connection_sup.beam */,
+				DA3E07851371CC6F0048E006 /* ssl_debug.beam */,
+				DA3E07861371CC6F0048E006 /* ssl_handshake.beam */,
+				DA3E07871371CC6F0048E006 /* ssl_manager.beam */,
+				DA3E07881371CC6F0048E006 /* ssl_pem.beam */,
+				DA3E07891371CC6F0048E006 /* ssl_pkix.beam */,
+				DA3E078A1371CC6F0048E006 /* ssl_pkix_oid.beam */,
+				DA3E078B1371CC6F0048E006 /* ssl_prim.beam */,
+				DA3E078C1371CC6F0048E006 /* ssl_record.beam */,
+				DA3E078D1371CC6F0048E006 /* ssl_server.beam */,
+				DA3E078E1371CC6F0048E006 /* ssl_session.beam */,
+				DA3E078F1371CC6F0048E006 /* ssl_session_cache.beam */,
+				DA3E07901371CC6F0048E006 /* ssl_session_cache_api.beam */,
+				DA3E07911371CC6F0048E006 /* ssl_ssl2.beam */,
+				DA3E07921371CC6F0048E006 /* ssl_ssl3.beam */,
+				DA3E07931371CC6F0048E006 /* ssl_sup.beam */,
+				DA3E07941371CC6F0048E006 /* ssl_tls1.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E07951371CC6F0048E006 /* pkix */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07961371CC6F0048E006 /* OTP-PKIX.asn1config */,
+				DA3E07971371CC6F0048E006 /* OTP-PKIX.hrl */,
+				DA3E07981371CC6F0048E006 /* PKIX1Algorithms88.asn1 */,
+				DA3E07991371CC6F0048E006 /* PKIX1Algorithms88.hrl */,
+				DA3E079A1371CC6F0048E006 /* PKIX1Explicit88.asn1 */,
+				DA3E079B1371CC6F0048E006 /* PKIX1Explicit88.hrl */,
+				DA3E079C1371CC6F0048E006 /* PKIX1Implicit88.asn1 */,
+				DA3E079D1371CC6F0048E006 /* PKIX1Implicit88.hrl */,
+				DA3E079E1371CC6F0048E006 /* PKIXAttributeCertificate.asn1 */,
+				DA3E079F1371CC6F0048E006 /* PKIXAttributeCertificate.hrl */,
+				DA3E07A01371CC6F0048E006 /* SSL-PKIX.asn1 */,
+			);
+			path = pkix;
+			sourceTree = "<group>";
+		};
+		DA3E07A11371CC6F0048E006 /* priv */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07A21371CC6F0048E006 /* bin */,
+				DA3E07A41371CC6F0048E006 /* obj */,
+			);
+			path = priv;
+			sourceTree = "<group>";
+		};
+		DA3E07A21371CC6F0048E006 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07A31371CC6F0048E006 /* ssl_esock */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		DA3E07A41371CC6F0048E006 /* obj */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07A51371CC6F0048E006 /* Makefile */,
+			);
+			path = obj;
+			sourceTree = "<group>";
+		};
+		DA3E07A61371CC6F0048E006 /* stdlib-1.16.5 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07A71371CC6F0048E006 /* ebin */,
+				DA3E07F81371CC6F0048E006 /* src */,
+			);
+			path = "stdlib-1.16.5";
+			sourceTree = "<group>";
+		};
+		DA3E07A71371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07A81371CC6F0048E006 /* array.beam */,
+				DA3E07A91371CC6F0048E006 /* base64.beam */,
+				DA3E07AA1371CC6F0048E006 /* beam_lib.beam */,
+				DA3E07AB1371CC6F0048E006 /* c.beam */,
+				DA3E07AC1371CC6F0048E006 /* calendar.beam */,
+				DA3E07AD1371CC6F0048E006 /* dets.beam */,
+				DA3E07AE1371CC6F0048E006 /* dets_server.beam */,
+				DA3E07AF1371CC6F0048E006 /* dets_sup.beam */,
+				DA3E07B01371CC6F0048E006 /* dets_utils.beam */,
+				DA3E07B11371CC6F0048E006 /* dets_v8.beam */,
+				DA3E07B21371CC6F0048E006 /* dets_v9.beam */,
+				DA3E07B31371CC6F0048E006 /* dict.beam */,
+				DA3E07B41371CC6F0048E006 /* digraph.beam */,
+				DA3E07B51371CC6F0048E006 /* digraph_utils.beam */,
+				DA3E07B61371CC6F0048E006 /* edlin.beam */,
+				DA3E07B71371CC6F0048E006 /* edlin_expand.beam */,
+				DA3E07B81371CC6F0048E006 /* epp.beam */,
+				DA3E07B91371CC6F0048E006 /* erl_bits.beam */,
+				DA3E07BA1371CC6F0048E006 /* erl_compile.beam */,
+				DA3E07BB1371CC6F0048E006 /* erl_eval.beam */,
+				DA3E07BC1371CC6F0048E006 /* erl_expand_records.beam */,
+				DA3E07BD1371CC6F0048E006 /* erl_internal.beam */,
+				DA3E07BE1371CC6F0048E006 /* erl_lint.beam */,
+				DA3E07BF1371CC6F0048E006 /* erl_parse.beam */,
+				DA3E07C01371CC6F0048E006 /* erl_posix_msg.beam */,
+				DA3E07C11371CC6F0048E006 /* erl_pp.beam */,
+				DA3E07C21371CC6F0048E006 /* erl_scan.beam */,
+				DA3E07C31371CC6F0048E006 /* erl_tar.beam */,
+				DA3E07C41371CC6F0048E006 /* error_logger_file_h.beam */,
+				DA3E07C51371CC6F0048E006 /* error_logger_tty_h.beam */,
+				DA3E07C61371CC6F0048E006 /* escript.beam */,
+				DA3E07C71371CC6F0048E006 /* ets.beam */,
+				DA3E07C81371CC6F0048E006 /* eval_bits.beam */,
+				DA3E07C91371CC6F0048E006 /* file_sorter.beam */,
+				DA3E07CA1371CC6F0048E006 /* filelib.beam */,
+				DA3E07CB1371CC6F0048E006 /* filename.beam */,
+				DA3E07CC1371CC6F0048E006 /* gb_sets.beam */,
+				DA3E07CD1371CC6F0048E006 /* gb_trees.beam */,
+				DA3E07CE1371CC6F0048E006 /* gen.beam */,
+				DA3E07CF1371CC6F0048E006 /* gen_event.beam */,
+				DA3E07D01371CC6F0048E006 /* gen_fsm.beam */,
+				DA3E07D11371CC6F0048E006 /* gen_server.beam */,
+				DA3E07D21371CC6F0048E006 /* io.beam */,
+				DA3E07D31371CC6F0048E006 /* io_lib.beam */,
+				DA3E07D41371CC6F0048E006 /* io_lib_format.beam */,
+				DA3E07D51371CC6F0048E006 /* io_lib_fread.beam */,
+				DA3E07D61371CC6F0048E006 /* io_lib_pretty.beam */,
+				DA3E07D71371CC6F0048E006 /* lib.beam */,
+				DA3E07D81371CC6F0048E006 /* lists.beam */,
+				DA3E07D91371CC6F0048E006 /* log_mf_h.beam */,
+				DA3E07DA1371CC6F0048E006 /* math.beam */,
+				DA3E07DB1371CC6F0048E006 /* ms_transform.beam */,
+				DA3E07DC1371CC6F0048E006 /* orddict.beam */,
+				DA3E07DD1371CC6F0048E006 /* ordsets.beam */,
+				DA3E07DE1371CC6F0048E006 /* otp_internal.beam */,
+				DA3E07DF1371CC6F0048E006 /* pg.beam */,
+				DA3E07E01371CC6F0048E006 /* pool.beam */,
+				DA3E07E11371CC6F0048E006 /* proc_lib.beam */,
+				DA3E07E21371CC6F0048E006 /* proplists.beam */,
+				DA3E07E31371CC6F0048E006 /* qlc.beam */,
+				DA3E07E41371CC6F0048E006 /* qlc_pt.beam */,
+				DA3E07E51371CC6F0048E006 /* queue.beam */,
+				DA3E07E61371CC6F0048E006 /* random.beam */,
+				DA3E07E71371CC6F0048E006 /* re.beam */,
+				DA3E07E81371CC6F0048E006 /* regexp.beam */,
+				DA3E07E91371CC6F0048E006 /* sets.beam */,
+				DA3E07EA1371CC6F0048E006 /* shell.beam */,
+				DA3E07EB1371CC6F0048E006 /* shell_default.beam */,
+				DA3E07EC1371CC6F0048E006 /* slave.beam */,
+				DA3E07ED1371CC6F0048E006 /* sofs.beam */,
+				DA3E07EE1371CC6F0048E006 /* stdlib.app */,
+				DA3E07EF1371CC6F0048E006 /* stdlib.appup */,
+				DA3E07F01371CC6F0048E006 /* string.beam */,
+				DA3E07F11371CC6F0048E006 /* supervisor.beam */,
+				DA3E07F21371CC6F0048E006 /* supervisor_bridge.beam */,
+				DA3E07F31371CC6F0048E006 /* sys.beam */,
+				DA3E07F41371CC6F0048E006 /* timer.beam */,
+				DA3E07F51371CC6F0048E006 /* unicode.beam */,
+				DA3E07F61371CC6F0048E006 /* win32reg.beam */,
+				DA3E07F71371CC6F0048E006 /* zip.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
+		DA3E07F81371CC6F0048E006 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07F91371CC6F0048E006 /* dets.hrl */,
+				DA3E07FA1371CC6F0048E006 /* erl_parse.yrl */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		DA3E07FB1371CC6F0048E006 /* xmerl-1.2.4 */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07FC1371CC6F0048E006 /* ebin */,
+			);
+			path = "xmerl-1.2.4";
+			sourceTree = "<group>";
+		};
+		DA3E07FC1371CC6F0048E006 /* ebin */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E07FD1371CC6F0048E006 /* xmerl_ucs.beam */,
+			);
+			path = ebin;
+			sourceTree = "<group>";
+		};
 		DA7B9E47136F515D008C13E0 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */,
+				DA155A681371C078006FCC18 /* Couchbase.xcodeproj */,
 			);
 			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		DA7B9E4A136F517B008C13E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DA7B9E53136F517B008C13E0 /* libCouchbase.a */,
-				DA7B9E57136F517B008C13E0 /* Couchbase.bundle */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +1443,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbase_ti" */;
 			buildPhases = (
+				DA3E08071371CC9B0048E006 /* ShellScript */,
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
@@ -181,7 +1451,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DAD0903913704DBF00E6EF5C /* PBXTargetDependency */,
+				DA155A7F1371C099006FCC18 /* PBXTargetDependency */,
 			);
 			name = couchbase_ti;
 			productName = couchbase_ti;
@@ -208,8 +1478,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = DA7B9E4A136F517B008C13E0 /* Products */;
-					ProjectRef = DA7B9E49136F517B008C13E0 /* Couchbase.xcodeproj */;
+					ProductGroup = DA155A691371C078006FCC18 /* Products */;
+					ProjectRef = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -221,18 +1491,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DA7B9E53136F517B008C13E0 /* libCouchbase.a */ = {
+		DA155A791371C078006FCC18 /* libCouchbase.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCouchbase.a;
-			remoteRef = DA7B9E52136F517B008C13E0 /* PBXContainerItemProxy */;
+			remoteRef = DA155A781371C078006FCC18 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DA7B9E57136F517B008C13E0 /* Couchbase.bundle */ = {
+		DA155A7B1371C078006FCC18 /* Couchbase.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = Couchbase.bundle;
-			remoteRef = DA7B9E56136F517B008C13E0 /* PBXContainerItemProxy */;
+			remoteRef = DA155A7A1371C078006FCC18 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -251,6 +1521,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
 		};
+		DA3E08071371CC9B0048E006 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -ex";
+			shellScript = "# copy Couchbase resources to the assets directory so they are available to the module\nCOUCHBASE_DIR=\"iOS-Couchbase/MobileCouchbase\"\nrm -Rf $SRCROOT/assets/couchbase\nmkdir $SRCROOT/assets/couchbase\ncp -R $COUCHBASE_DIR/erlang $SRCROOT/assets/couchbase\ncp -R $COUCHBASE_DIR/demo.couch $SRCROOT/assets/couchbase\ncp -R $COUCHBASE_DIR/icouch.ini $SRCROOT/assets/couchbase\ncp -R $COUCHBASE_DIR/default.ini $SRCROOT/assets/couchbase\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,6 +1543,10 @@
 			files = (
 				24DD6CFA1134B3F500162E58 /* ComObscureCouchbase_tiModule.m in Sources */,
 				24DE9E1211C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m in Sources */,
+				DA3E07FF1371CC6F0048E006 /* emonk_app.js in Sources */,
+				DA3E08001371CC6F0048E006 /* emonk_mapred.js in Sources */,
+				DA3E08021371CC6F0048E006 /* Makefile in Sources */,
+				DA3E08031371CC6F0048E006 /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +1558,10 @@
 			target = D2AAC07D0554694100DB518D /* couchbase_ti */;
 			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
 		};
-		DAD0903913704DBF00E6EF5C /* PBXTargetDependency */ = {
+		DA155A7F1371C099006FCC18 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Couchbase;
-			targetProxy = DAD0903813704DBF00E6EF5C /* PBXContainerItemProxy */;
+			targetProxy = DA155A7E1371C099006FCC18 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -292,7 +1579,17 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(TITANIUM_BASE_SDK)",
+					"$(TITANIUM_BASE_SDK2)",
+					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
+				);
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+				);
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Debug;
@@ -306,7 +1603,17 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(TITANIUM_BASE_SDK)",
+					"$(TITANIUM_BASE_SDK2)",
+					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
+				);
 				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
+				);
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Release;
@@ -323,10 +1630,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)/include",
 				);
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -343,10 +1652,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)/include",
 				);
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};

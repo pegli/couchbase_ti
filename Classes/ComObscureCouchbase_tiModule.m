@@ -84,23 +84,20 @@
 	}
 }
 
-#pragma Public APIs
+#pragma mark - Public Methods
 
--(id)example:(id)args
-{
-	// example method
-	return @"hello world";
+- (void)startCouchbase {
+    [Couchbase startCouchbase:self];
 }
 
--(id)exampleProp
-{
-	// example property getter
-	return @"hello world";
+#pragma mark - CouchbaseDelegate
+
+- (void)couchbaseDidStart:(NSURL *)serverURL {
+    NSLog(@"couchbase started on %@", [serverURL description]);
 }
 
--(void)exampleProp:(id)value
-{
-	// example property setter
+- (NSString *)couchbaseAppRoot {
+    return [NSString stringWithFormat:@"modules/%@/couchbase",[self moduleId]];
 }
 
 @end

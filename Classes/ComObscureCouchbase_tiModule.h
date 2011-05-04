@@ -5,9 +5,9 @@
  * and licensed under the Apache Public License (version 2)
  */
 #import "TiModule.h"
+#import "Couchbase.h"
 
-@interface ComObscureCouchbase_tiModule : TiModule 
-{
+@interface ComObscureCouchbase_tiModule : TiModule <CouchbaseDelegate> {
 }
-
+- (void)startCouchbase;
 @end

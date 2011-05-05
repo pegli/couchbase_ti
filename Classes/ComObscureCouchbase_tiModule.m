@@ -11,6 +11,8 @@
 
 @implementation ComObscureCouchbase_tiModule
 
+@synthesize serverUrl=_serverUrl;
+
 #pragma mark Internal
 
 // this is generated for your module, please do not change it
@@ -67,7 +69,8 @@
 
 -(void)_listenerAdded:(NSString *)type count:(int)count
 {
-	if (count == 1 && [type isEqualToString:@"my_event"])
+    NSLog(@"added listener for type %@", type);
+	if (count == 1 && [type isEqualToString:kEventServerStarted])
 	{
 		// the first (of potentially many) listener is being added 
 		// for event named 'my_event'
@@ -76,7 +79,7 @@
 
 -(void)_listenerRemoved:(NSString *)type count:(int)count
 {
-	if (count == 0 && [type isEqualToString:@"my_event"])
+	if (count == 0 && [type isEqualToString:kEventServerStarted])
 	{
 		// the last listener called for event named 'my_event' has
 		// been removed, we can optionally clean up any resources
@@ -87,14 +90,23 @@
 #pragma mark - Public Methods
 
 - (void)startCouchbase:(id)args {
-    NSLog(@"starting couchbase");
+    NSLog(@"go go couchbase!");
     [Couchbase startCouchbase:self];
 }
 
 #pragma mark - CouchbaseDelegate
 
 - (void)couchbaseDidStart:(NSURL *)serverURL {
-    NSLog(@"couchbase started on %@", [serverURL description]);
+    [_serverUrl release];
+    _serverUrl = [serverURL absoluteString];
+    NSLog(@"couchbase started on %@", self.serverUrl);
+    
+//    if ([self _hasListeners:kEventServerStarted]) {
+        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:self.serverUrl, kEventParamServerURL, nil];
+        [self fireEvent:kEventServerStarted withObject:event];
+        NSLog(@"fired event");
+//    }
+    
 }
 
 - (NSString *)couchbaseAppRoot {

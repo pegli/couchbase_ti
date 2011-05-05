@@ -8,12 +8,19 @@
 var window = Ti.UI.createWindow({
 	backgroundColor:'white'
 });
-var label = Ti.UI.createLabel();
+var label = Ti.UI.createLabel({
+  text: "loading..."
+});
 window.add(label);
 window.open();
 
-// TODO: write your module tests here
-var couchbase_ti = require('com.obscure.couchbase_ti');
-Ti.API.info("module is => " + couchbase_ti);
+// register for the server start event BEFORE loading the module!
 
+var serverUrl;
+var couchbase_ti = require('com.obscure.couchbase_ti');
+couchbase_ti.addEventListener("com.obscure.couchbase_ti.server_started", function(e) {
+  serverUrl = e.serverUrl;
+  Ti.API.info("server URL is: "+serverUrl);
+  label.text = couchbase_ti.serverUrl || 'no url?';
+});
 couchbase_ti.startCouchbase();

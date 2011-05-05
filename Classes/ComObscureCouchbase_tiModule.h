@@ -9,5 +9,5 @@
 
 @interface ComObscureCouchbase_tiModule : TiModule <CouchbaseDelegate> {
 }
-- (void)startCouchbase;
+- (void)startCouchbase:(id)args;
 @end

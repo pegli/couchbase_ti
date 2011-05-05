@@ -86,7 +86,8 @@
 
 #pragma mark - Public Methods
 
-- (void)startCouchbase {
+- (void)startCouchbase:(id)args {
+    NSLog(@"starting couchbase");
     [Couchbase startCouchbase:self];
 }
 
@@ -97,8 +98,8 @@
 }
 
 - (NSString *)couchbaseAppRoot {
-    NSLog(@"asked for root");
-    return [NSString stringWithFormat:@"modules/%@/couchbase",[self moduleId]];
+    NSString * bundlePath = [[NSBundle mainBundle] bundlePath];
+    return [NSString stringWithFormat:@"%@/modules/%@/Couchbase.bundle", bundlePath, [self moduleId]];
 }
 
 @end

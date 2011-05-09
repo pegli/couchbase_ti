@@ -9,6 +9,10 @@
 #import "TiHost.h"
 #import "TiUtils.h"
 
+@interface ComObscureCouchbase_tiModule (PrivateMethods)
+- (void)setConfigSection:(NSString *)section key:(NSString *)key value:(NSString *)value;
+@end
+
 @implementation ComObscureCouchbase_tiModule
 
 @synthesize serverUrl=_serverUrl;
@@ -90,7 +94,6 @@
 #pragma mark - Public Methods
 
 - (void)startCouchbase:(id)args {
-    NSLog(@"go go couchbase!");
     [Couchbase startCouchbase:self];
 }
 
@@ -100,18 +103,49 @@
     [_serverUrl release];
     _serverUrl = [serverURL absoluteString];
     NSLog(@"couchbase started on %@", self.serverUrl);
+
+    // set the config values to point to the correct emonk executables
+    // TODO maybe only do this once?
+    [self setConfigSection:@"app_server_emonk"
+                       key:@"source"
+                     value:[NSString stringWithFormat:@"\"%@/modules/%@/Couchbase.bundle/erlang/emonk_app.js\"",
+                            [[NSBundle mainBundle] bundlePath], [self moduleId]
+                            ]
+     ];
+    [self setConfigSection:@"view_server_emonk"
+                       key:@"mapred_js"
+                     value:[NSString stringWithFormat:@"\"%@/modules/%@/Couchbase.bundle/erlang/emonk_mapred.js\"",
+                            [[NSBundle mainBundle] bundlePath], [self moduleId]
+                            ]
+     ];
     
-//    if ([self _hasListeners:kEventServerStarted]) {
+    if ([self _hasListeners:kEventServerStarted]) {
         NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:self.serverUrl, kEventParamServerURL, nil];
         [self fireEvent:kEventServerStarted withObject:event];
-        NSLog(@"fired event");
-//    }
+    }
     
 }
 
 - (NSString *)couchbaseAppRoot {
     NSString * bundlePath = [[NSBundle mainBundle] bundlePath];
     return [NSString stringWithFormat:@"%@/modules/%@/Couchbase.bundle", bundlePath, [self moduleId]];
+}
+
+#pragma mark - Private Methods
+
+- (void)setConfigSection:(NSString *)section key:(NSString *)key value:(NSString *)value {
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"/_config/%@/%@", section, key] relativeToURL:[NSURL URLWithString:self.serverUrl]];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"PUT"];
+    NSData * data = [value dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPBody:data];
+    [request setValue:[[NSNumber numberWithInteger:[data length]] stringValue] forHTTPHeaderField:@"Content-Length"];
+    
+    NSError * error;
+    NSURLResponse * response;
+    if (![NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error]) {
+        NSLog(@"Error sending config URL: %@", [error description]);
+    }
 }
 
 @end

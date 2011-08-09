@@ -7,9 +7,10 @@ INSTALLATION
 --------------------
 See the build instructions in the Github wiki if you are building from source.
 
-1. Run `build.py` which creates your distribution
-2. cd to `/Library/Application Support/Titanium`
-3. copy this zip file into the folder of your Titanium SDK
+1. Download the Couchbase framework from https://github.com/downloads/couchbaselabs/iOS-Couchbase/Couchbase.framework.zip
+2. Move the Couchbase.framework file to $HOME/Library/Frameworks
+3. Run `build.py` to create the module zip file
+4. Copy com.obscure.couchbase_ti-iphone-1.0.zip to $TITANIUM_HOME (usually $HOME/Library/Application Support/Titanium)
 
 REGISTRATION
 ---------------------
@@ -30,7 +31,11 @@ To use the module in code, you will need to require it.
 
 For example,
 
-	var couchbase = require('com.obscure.couchbase_ti');
-	couchbase.startCouchbase();
+var serverUrl;
+var couchbase_ti = require('com.obscure.couchbase_ti');
+couchbase_ti.addEventListener("com.obscure.couchbase_ti.server_started", function(e) {
+  // store the server URL as it is started on a random port
+  serverUrl = e.serverUrl;
+});
+couchbase_ti.startCouchbase();
 	
-This will start a Couchbase server on a random port.

@@ -19,8 +19,8 @@ window.open();
 var serverUrl;
 var couchbase_ti = require('com.obscure.couchbase_ti');
 couchbase_ti.addEventListener("com.obscure.couchbase_ti.server_started", function(e) {
+Ti.API.info(e);
   serverUrl = e.serverUrl;
-  Ti.API.info("server URL is: "+serverUrl);
-  label.text = couchbase_ti.serverUrl || 'no url?';
+  label.text = serverUrl || 'no url?';
 });
 couchbase_ti.startCouchbase();

@@ -24,11 +24,8 @@
 /* Begin PBXBuildFile section */
 		24DD6CF91134B3F500162E58 /* ComObscureCouchbase_tiModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */; };
 		24DD6CFA1134B3F500162E58 /* ComObscureCouchbase_tiModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */; };
-		24DE9E1111C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.h */; };
-		24DE9E1211C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		DA155A831371C0A1006FCC18 /* libCouchbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA155A821371C0A1006FCC18 /* libCouchbase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,48 +36,15 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = couchbase_ti;
 		};
-		DA155A781371C078006FCC18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BC4A607D1324C493003F32D3;
-			remoteInfo = Couchbase;
-		};
-		DA155A7A1371C078006FCC18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 79F5314313208D3700038ADD;
-			remoteInfo = Couchbase.bundle;
-		};
-		DA155A7E1371C099006FCC18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BC4A607C1324C493003F32D3;
-			remoteInfo = Couchbase;
-		};
-		DA3E27EC1373046200939650 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 79F5314213208D3700038ADD;
-			remoteInfo = Couchbase.bundle;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComObscureCouchbase_tiModule.h; path = Classes/ComObscureCouchbase_tiModule.h; sourceTree = "<group>"; };
 		24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComObscureCouchbase_tiModule.m; path = Classes/ComObscureCouchbase_tiModule.m; sourceTree = "<group>"; };
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
-		24DE9E0F11C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComObscureCouchbase_tiModuleAssets.h; path = Classes/ComObscureCouchbase_tiModuleAssets.h; sourceTree = "<group>"; };
-		24DE9E1011C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComObscureCouchbase_tiModuleAssets.m; path = Classes/ComObscureCouchbase_tiModuleAssets.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComObscureCouchbase_ti_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libComObscureCouchbase_ti.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComObscureCouchbase_ti.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA155A681371C078006FCC18 /* Couchbase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Couchbase.xcodeproj; path = "iOS-Couchbase/MobileCouchbase/Couchbase.xcodeproj"; sourceTree = "<group>"; };
-		DA155A821371C0A1006FCC18 /* libCouchbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCouchbase.a; sourceTree = SOURCE_ROOT; };
-		DAD0903613704DB700E6EF5C /* libCouchbase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCouchbase.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA155A831371C0A1006FCC18 /* libCouchbase.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,8 +72,6 @@
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				DA7B9E47136F515D008C13E0 /* Dependencies */,
-				DA155A841371C1B0006FCC18 /* Libraries */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
@@ -120,7 +81,6 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAD0903613704DB700E6EF5C /* libCouchbase.a */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -129,8 +89,6 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				24DE9E0F11C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.h */,
-				24DE9E1011C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m */,
 				24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */,
 				24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */,
 			);
@@ -146,31 +104,6 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		DA155A691371C078006FCC18 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DA155A791371C078006FCC18 /* libCouchbase.a */,
-				DA155A7B1371C078006FCC18 /* Couchbase.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DA155A841371C1B0006FCC18 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				DA155A821371C0A1006FCC18 /* libCouchbase.a */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
-		DA7B9E47136F515D008C13E0 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				DA155A681371C078006FCC18 /* Couchbase.xcodeproj */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -180,7 +113,6 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch in Headers */,
 				24DD6CF91134B3F500162E58 /* ComObscureCouchbase_tiModule.h in Headers */,
-				24DE9E1111C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,15 +124,13 @@
 			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbase_ti" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
-				DA3E27F71373086A00939650 /* ShellScript */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				DACD2B6013E362A500ADE1D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DA3E27ED1373046200939650 /* PBXTargetDependency */,
-				DA155A7F1371C099006FCC18 /* PBXTargetDependency */,
 			);
 			name = couchbase_ti;
 			productName = couchbase_ti;
@@ -225,12 +155,6 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* couchbase_ti */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DA155A691371C078006FCC18 /* Products */;
-					ProjectRef = DA155A681371C078006FCC18 /* Couchbase.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* couchbase_ti */,
@@ -238,23 +162,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DA155A791371C078006FCC18 /* libCouchbase.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libCouchbase.a;
-			remoteRef = DA155A781371C078006FCC18 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DA155A7B1371C078006FCC18 /* Couchbase.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = Couchbase.bundle;
-			remoteRef = DA155A7A1371C078006FCC18 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		24416B8011C4CA220047AFDD /* ShellScript */ = {
@@ -270,9 +177,9 @@
 			shellPath = /bin/sh;
 			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
 		};
-		DA3E27F71373086A00939650 /* ShellScript */ = {
+		DACD2B6013E362A500ADE1D9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
@@ -280,8 +187,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "rm -Rf assets/Couchbase.bundle\ncp -R $SRCROOT/iOS-Couchbase/MobileCouchbase/build/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/Couchbase.bundle assets";
+			shellPath = /bin/sh;
+			shellScript = "rsync -av ${HOME}/Library/Frameworks/Couchbase.framework/CouchbaseResources ${SRCROOT}/assets";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -291,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DD6CFA1134B3F500162E58 /* ComObscureCouchbase_tiModule.m in Sources */,
-				24DE9E1211C5FE74003F90F6 /* ComObscureCouchbase_tiModuleAssets.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,16 +209,6 @@
 			target = D2AAC07D0554694100DB518D /* couchbase_ti */;
 			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
 		};
-		DA155A7F1371C099006FCC18 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Couchbase;
-			targetProxy = DA155A7E1371C099006FCC18 /* PBXContainerItemProxy */;
-		};
-		DA3E27ED1373046200939650 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Couchbase.bundle;
-			targetProxy = DA3E27EC1373046200939650 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -321,6 +217,7 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -329,14 +226,8 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
-				HEADER_SEARCH_PATHS = (
-					"$(TITANIUM_BASE_SDK)",
-					"$(TITANIUM_BASE_SDK2)",
-					"$(BUILT_PRODUCTS)/include",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
-				);
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Debug;
@@ -346,18 +237,13 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
-				HEADER_SEARCH_PATHS = (
-					"$(TITANIUM_BASE_SDK)",
-					"$(TITANIUM_BASE_SDK2)",
-					"$(BUILT_PRODUCTS)/include",
-					"$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/include",
-				);
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/iOS-Couchbase/MobileCouchbase/build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Release;
@@ -366,7 +252,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -375,12 +261,10 @@
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
 				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -388,7 +272,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -396,12 +280,10 @@
 					"$(TITANIUM_BASE_SDK)",
 					"$(TITANIUM_BASE_SDK2)",
 				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

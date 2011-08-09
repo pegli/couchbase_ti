@@ -14,4 +14,4 @@ name: couchbase_ti
 moduleid: com.obscure.couchbase_ti
 guid: 08aaae27-9ded-4cca-adbd-7a5d984c4085
 platform: iphone
-minsdk: 1.6.2
+minsdk: 1.7.2

@@ -1,3 +1,0 @@
-[submodule "mobile/ios/iOS-Couchbase"]
-	path = mobile/ios/iOS-Couchbase
-	url = git@github.com:pegli/iOS-Couchbase.git

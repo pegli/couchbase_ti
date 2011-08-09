@@ -9,20 +9,16 @@
 #import "TiHost.h"
 #import "TiUtils.h"
 
-@interface ComObscureCouchbase_tiModule (PrivateMethods)
-- (void)setConfigSection:(NSString *)section key:(NSString *)key value:(NSString *)value;
-@end
-
 @implementation ComObscureCouchbase_tiModule
 
-@synthesize serverUrl=_serverUrl;
+@synthesize server;
 
 #pragma mark Internal
 
 // this is generated for your module, please do not change it
 -(id)moduleGUID
 {
-	return @"08aaae27-9ded-4cca-adbd-7a5d984c4085";
+	return @"5362b230-c736-4779-b246-f418d911f6f1";
 }
 
 // this is generated for your module, please do not change it
@@ -38,8 +34,30 @@
 	// this method is called when the module is first loaded
 	// you *must* call the superclass
 	[super startup];
-	
-	NSLog(@"[INFO] %@ loaded",self);
+}
+
+- (void)startCouchbase:(id)args {
+  NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"com.obscure.couchbase_ti/1.0/assets"];
+  CouchbaseEmbeddedServer * s = [[CouchbaseEmbeddedServer alloc] initWithBundlePath:resourcesPath];
+  s.delegate = self;
+  if ([s start]) {
+    self.server = s;
+  	NSLog(@"[INFO] %@ loaded",self);
+  }
+  else {
+    NSLog(@"[ERROR] could not start Couchbase server!");
+  }
+    
+}
+
+-(void)couchbaseDidStart:(NSURL *)aServerURL {
+    // TODO store server URL? create client?
+    NSLog(@"Couchbase started on %@", aServerURL);
+
+    if ([self _hasListeners:kEventServerStarted]) {
+        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:aServerURL, kEventParamServerURL, nil];
+        [self fireEvent:kEventServerStarted withObject:event];
+    }
 }
 
 -(void)shutdown:(id)sender
@@ -73,8 +91,7 @@
 
 -(void)_listenerAdded:(NSString *)type count:(int)count
 {
-    NSLog(@"added listener for type %@", type);
-	if (count == 1 && [type isEqualToString:kEventServerStarted])
+	if (count == 1 && [type isEqualToString:@"my_event"])
 	{
 		// the first (of potentially many) listener is being added 
 		// for event named 'my_event'
@@ -83,7 +100,7 @@
 
 -(void)_listenerRemoved:(NSString *)type count:(int)count
 {
-	if (count == 0 && [type isEqualToString:kEventServerStarted])
+	if (count == 0 && [type isEqualToString:@"my_event"])
 	{
 		// the last listener called for event named 'my_event' has
 		// been removed, we can optionally clean up any resources
@@ -91,61 +108,6 @@
 	}
 }
 
-#pragma mark - Public Methods
-
-- (void)startCouchbase:(id)args {
-    [Couchbase startCouchbase:self];
-}
-
-#pragma mark - CouchbaseDelegate
-
-- (void)couchbaseDidStart:(NSURL *)serverURL {
-    [_serverUrl release];
-    _serverUrl = [serverURL absoluteString];
-    NSLog(@"couchbase started on %@", self.serverUrl);
-
-    // set the config values to point to the correct emonk executables
-    // TODO maybe only do this once?
-    [self setConfigSection:@"app_server_emonk"
-                       key:@"source"
-                     value:[NSString stringWithFormat:@"\"%@/modules/%@/Couchbase.bundle/erlang/emonk_app.js\"",
-                            [[NSBundle mainBundle] bundlePath], [self moduleId]
-                            ]
-     ];
-    [self setConfigSection:@"view_server_emonk"
-                       key:@"mapred_js"
-                     value:[NSString stringWithFormat:@"\"%@/modules/%@/Couchbase.bundle/erlang/emonk_mapred.js\"",
-                            [[NSBundle mainBundle] bundlePath], [self moduleId]
-                            ]
-     ];
-    
-    if ([self _hasListeners:kEventServerStarted]) {
-        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:self.serverUrl, kEventParamServerURL, nil];
-        [self fireEvent:kEventServerStarted withObject:event];
-    }
-    
-}
-
-- (NSString *)couchbaseAppRoot {
-    NSString * bundlePath = [[NSBundle mainBundle] bundlePath];
-    return [NSString stringWithFormat:@"%@/modules/%@/Couchbase.bundle", bundlePath, [self moduleId]];
-}
-
-#pragma mark - Private Methods
-
-- (void)setConfigSection:(NSString *)section key:(NSString *)key value:(NSString *)value {
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"/_config/%@/%@", section, key] relativeToURL:[NSURL URLWithString:self.serverUrl]];
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"PUT"];
-    NSData * data = [value dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPBody:data];
-    [request setValue:[[NSNumber numberWithInteger:[data length]] stringValue] forHTTPHeaderField:@"Content-Length"];
-    
-    NSError * error;
-    NSURLResponse * response;
-    if (![NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error]) {
-        NSLog(@"Error sending config URL: %@", [error description]);
-    }
-}
+#pragma Public APIs
 
 @end

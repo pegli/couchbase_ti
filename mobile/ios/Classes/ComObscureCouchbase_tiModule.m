@@ -38,10 +38,9 @@
 
 - (void)startCouchbase:(id)args {
   NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"com.obscure.couchbase_ti/1.0/assets"];
-  CouchbaseEmbeddedServer * s = [[CouchbaseEmbeddedServer alloc] initWithBundlePath:resourcesPath];
+  CouchbaseMobile * s = [[CouchbaseMobile alloc] initWithBundlePath:resourcesPath];
   s.delegate = self;
   if ([s start]) {
-    self.server = s;
   	NSLog(@"[INFO] %@ loaded",self);
   }
   else {
@@ -50,14 +49,21 @@
     
 }
 
--(void)couchbaseDidStart:(NSURL *)aServerURL {
-    // TODO store server URL? create client?
-    NSLog(@"Couchbase started on %@", aServerURL);
-
+- (void)couchbaseMobile:(CouchbaseMobile *)couchbase didStart:(NSURL *)serverURL {
+    NSLog(@"Couchbase started on %@", serverURL);
+    self.server = couchbase;
     if ([self _hasListeners:kEventServerStarted]) {
-        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:aServerURL, kEventParamServerURL, nil];
+        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:serverURL, kEventParamServerURL, nil];
         [self fireEvent:kEventServerStarted withObject:event];
     }
+}
+
+- (void)couchbaseMobile:(CouchbaseMobile *)couchbase failedToStart:(NSError *)error {
+    NSLog(@"Error starting Couchbase server: %@", [error description]);
+}
+
+-(void)couchbaseDidStart:(NSURL *)aServerURL {
+    // TODO store server URL? create client?
 }
 
 -(void)shutdown:(id)sender

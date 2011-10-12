@@ -5,13 +5,13 @@
  * and licensed under the Apache Public License (version 2)
  */
 #import "TiModule.h"
-#import "Couchbase/CouchbaseEmbeddedServer.h"
+#import "Couchbase/CouchbaseMobile.h"
 
 #define kEventServerStarted @"com.obscure.couchbase_ti.server_started"
 #define kEventParamServerURL @"serverUrl"
 
 @interface ComObscureCouchbase_tiModule : TiModule <CouchbaseDelegate> {
 }
-@property (nonatomic, retain) CouchbaseEmbeddedServer *server;
+@property (nonatomic, retain) CouchbaseMobile *server;
 -(void)startCouchbase:(id)args;
 @end

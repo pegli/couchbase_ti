@@ -192,6 +192,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "rsync -av ${HOME}/Library/Frameworks/Couchbase.framework/CouchbaseResources ${SRCROOT}/assets";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -219,7 +220,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
@@ -229,7 +229,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Couchbase,
+				);
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Debug;
@@ -238,14 +241,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Couchbase,
+				);
 				PRODUCT_NAME = ComObscureCouchbase_ti;
 			};
 			name = Release;

@@ -37,7 +37,7 @@
 }
 
 - (void)startCouchbase:(id)args {
-  NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"com.obscure.couchbase_ti/1.0/assets"];
+  NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"modules/com.obscure.couchbase_ti"];
   CouchbaseMobile * s = [[CouchbaseMobile alloc] initWithBundlePath:resourcesPath];
   s.delegate = self;
   if ([s start]) {
@@ -46,7 +46,6 @@
   else {
     NSLog(@"[ERROR] could not start Couchbase server!");
   }
-    
 }
 
 - (void)couchbaseMobile:(CouchbaseMobile *)couchbase didStart:(NSURL *)serverURL {

@@ -52,7 +52,7 @@
     NSLog(@"Couchbase started on %@", serverURL);
     self.server = couchbase;
     if ([self _hasListeners:kEventServerStarted]) {
-        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:serverURL, kEventParamServerURL, nil];
+        NSDictionary * event = [NSDictionary dictionaryWithObjectsAndKeys:[serverURL absoluteString], kEventParamServerURL, nil];
         [self fireEvent:kEventServerStarted withObject:event];
     }
 }

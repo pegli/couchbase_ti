@@ -1,0 +1,24 @@
+CouchBooks sample application
+
+This app is a blatant copy of the CoreDataBooks application which uses the
+Couchbase Mobile for iOS and the couchbase_ti module for data storage.  The
+original CoreDataBooks app can be found here:
+
+  http://developer.apple.com/library/ios/#samplecode/CoreDataBooks/Introduction/Intro.html#//apple_ref/doc/uid/DTS40008405
+
+This sample illustrates how to initialize a CouchDb database, load default
+data and design documents, and populate Titanium UI objects with data from
+CouchDb.  It includes a CommonJS module that provides a more database-like
+interface on top of the asynchronous HTTP calls that are used to access
+CouchDb.
+
+In order to run this example, you must have installed the couchbase_ti module
+according to the instructions found on Github here:
+
+  https://github.com/pegli/couchbase_ti/wiki/Using-couchbase_ti
+
+Feel free to log issues with this application on the couchbase_ti Github project.
+
+Time to relax!
+
+--paul

@@ -1,0 +1,8 @@
+#appname:CouchBooks
+#publisher:paul
+#url:https://github.com/pegli/couchbase_ti
+#image:appicon.png
+#appid:com.obscure.example.CouchBooks
+#desc:Example application for the couchbase_ti module.
+#type:ipad
+#guid:6a79daed-e4d7-4de5-832c-96fc72f8b435

@@ -50,41 +50,43 @@ exports.createRootWindow = function(controller, db, options) {
   result.rightNavButton = addButton;
 
   result.addEventListener('open', function(e) {
-    load_books(db, tableView);
+    load_book_list(db, tableView);
   });
     
   return result;
 };
 
-function load_books(db, table) {
+function load_book_list(db, table) {
   db.view('books/by_author', { include_docs: true }, function(data, status) {
     var sections = [];
     if (status === 200) {
       var section;
       for (i in data.rows) {
-        var key = data.rows[i].key;
-        var doc = data.rows[i].doc;
+        var author = data.rows[i].key;
+        var book = data.rows[i].doc;
         
-        if (!section || section.headerTitle !== key) {
+        if (!section || section.headerTitle !== author) {
           section && sections.push(section);
           section = Ti.UI.createTableViewSection({
-            headerTitle: key
+            headerTitle: author
           });
         }
         
         var row = Ti.UI.createTableViewRow({
-          title: doc.title,
+          title: book.title,
           hasChild: true,
-          doc: doc,
+          book: book,
         });
-        row.addEventListener('click', (function(d) {
+        row.addEventListener('click', (function(b) {
           return function(e) {
-            alert(JSON.stringify(d));
+            alert(JSON.stringify(b));
           }
-        })(doc));
+        })(book));
         section.add(row);
       }
     }
     table.setData(sections);
   });
 };
+
+

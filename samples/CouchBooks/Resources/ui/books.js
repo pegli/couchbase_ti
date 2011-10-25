@@ -11,6 +11,16 @@ exports.createRootWindow = function(controller, db, options) {
   var tableView = Ti.UI.createTableView({
     
   });
+  result.addEventListener('delete', function(e) {
+    var doc = e.rowData.doc;
+    if (doc) {
+      db.remove(doc._id, doc._rev, function(resp, status) {
+        if (status !== 200) {
+          alert('Error deleting book: '+JSON.stringify(resp));
+        }
+      });
+    }
+  });
   result.add(tableView);
 
   var editButton = Ti.UI.createButton({
@@ -65,6 +75,7 @@ function load_books(db, table) {
         var row = Ti.UI.createTableViewRow({
           title: doc.title,
           hasChild: true,
+          doc: doc,
         });
         row.addEventListener('click', (function(d) {
           return function(e) {

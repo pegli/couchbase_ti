@@ -12,9 +12,10 @@ exports.CouchClient = function() {
   var args = slice.call(arguments);
   this.base_url = arguments.length > 0 ? arguments[0] : 'http://127.0.0.1:5984';
   this.auth = arguments.length > 1 ? arguments[1] : null;
+  this.debug = arguments.length > 2 ? arguments[2] : false;
 };
 
-// server-level miscellaneous methos
+// server-level miscellaneous methods
 
 exports.CouchClient.prototype.active_tasks = function(callback) {
   this._request('GET', '_active_tasks', callback);
@@ -247,6 +248,7 @@ exports.CouchClient.prototype._request = function(method, path, /* [options], [d
   var client = Ti.Network.createHTTPClient({
     timeout: 2000,
     onload: function() {
+      that.debug && Ti.API.info('response: '+this.status+' '+this.responseText);
       var json;
       var contentType = this.getResponseHeader('Content-Type');
       if (contentType === 'application/json') {
@@ -263,16 +265,20 @@ exports.CouchClient.prototype._request = function(method, path, /* [options], [d
       }
     },
     onerror: function() {
+      that.debug && Ti.API.info('response: '+this.status+' '+this.responseText);
       callback(this.responseText, this.status, this.getResponseHeader('Content-Type'));
     },
   });
   
   var url = [this.base_url, path].join('/');
   client.open(method, url);
+  this.debug && Ti.API.info(method + ' '+url);
+  
   for (var i in headers) {
     client.setRequestHeader(i, headers[i]);
   }
   client.send(data);
+  this.debug && Ti.API.info('request: '+JSON.stringify(data));
 };
 
 // static helper functions
@@ -286,6 +292,8 @@ function _process_view_options(options) {
     }
   }
 }
+
+var empty = {};
 
 function _mixin(target, source) {
   var name, s, i;

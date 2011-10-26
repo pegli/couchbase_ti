@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
   <string name="RootWindow.title">Books</string>
-  
+  <string name="DetailWindow.title">Info</string>
+  <string name="DetailRow.title">Title</string>
+  <string name="DetailRow.author">Author</string>
+  <string name="DetailRow.copyright">Copyright</string>
 </resources>

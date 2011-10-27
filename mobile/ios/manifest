@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.1
+version: 1.0.2
 description: Couchbase Mobile module for iOS
 author: Paul Mietz Egli
 license: Apache 2.0

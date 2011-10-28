@@ -75,7 +75,13 @@ exports.createRootWindow = function(controller, db, options) {
     systemButton: Ti.UI.iPhone.SystemButton.ADD,
   });
   addButton.addEventListener('click', function(e) {
-    
+    var win = exports.createDetailWindow(controller, db, {
+      title: L('book.default_title'),
+      author: L('book.default_author'),
+      copyright: [1970],
+    });
+    win._set_editing(true);
+    controller.open(win);
   });
   result.rightNavButton = addButton;
 
@@ -119,12 +125,23 @@ exports.createDetailWindow = function(controller, db, book) {
     title: L('DetailWindow.title'),
     backgroundColor: 'white',
   });
-  
 
+  // create a copy of the original book for editing  
+  var newbook = {};
+  _.extend(newbook, book);
+
+  result.addEventListener('book:change', function(e) {
+    var key = e.key, value = e.value;
+    if (key && value) {
+      newbook[key] = value;
+    }
+  });
+  
   var rows = [];
-  rows.push(createDetailRow(db, L('DetailRow.title'), book, 'title'));
-  rows.push(createDetailRow(db, L('DetailRow.author'), book, 'author'));
-  rows.push(createDetailRow(db, L('DetailRow.copyright'), book, 'copyright', dateFormatter));
+  rows.push(createDetailRow(result, L('DetailRow._id'), book, '_id'));
+  rows.push(createDetailRow(result, L('DetailRow.title'), book, 'title'));
+  rows.push(createDetailRow(result, L('DetailRow.author'), book, 'author'));
+  rows.push(createDetailRow(result, L('DetailRow.copyright'), book, 'copyright', dateFormatter));
   
   var tableView = Ti.UI.createTableView({
     data: rows,
@@ -137,31 +154,61 @@ exports.createDetailWindow = function(controller, db, book) {
     systemButton: Ti.UI.iPhone.SystemButton.EDIT,
   });
   editButton.addEventListener('click', function(e) {
-    for (var i in rows) {
-      rows[i].hasChild = true;
-      rows[i].touchEnabled = true;
-    }
-    result.rightNavButton = doneButton;
+    result._set_editing(true);
   });
   
   var doneButton = Ti.UI.createButton({
     systemButton: Ti.UI.iPhone.SystemButton.DONE,
   });
   doneButton.addEventListener('click', function(e) {
-    for (var i in rows) {
-      rows[i].hasChild = false;
-      rows[i].touchEnabled = false;
+    result._set_editing(false);
+    if (!newbook._id || newbook._id.length < 1) {
+      alert(L('DetailWindow.error.missing_id'));
+      return;
     }
-    result.rightNavButton = editButton;
+    
+    if (book._id && newbook._id !== book._id) {
+      var alertDialog = Ti.UI.createAlertDialog({
+        message: L('DetailWindow.warning.changed_id'),
+        buttonNames: [L('Ok'), L('Cancel')]
+      });
+      alertDialog.addEventListener('click', function(e) {
+        if (!e.cancel) {
+          saveBook(db, newbook);
+        }
+      });
+      alertDialog.show();
+    }
+    else {
+      saveBook(db, newbook);
+    }
+    
   });
   
   result.rightNavButton = editButton;
+  
+  result._set_editing = function(editing) {
+    for (var i in rows) {
+      rows[i].hasChild = editing;
+      rows[i].touchEnabled = editing;
+    }
+    result.rightNavButton = editing ? doneButton : editButton;
+  }
 
   return result;
 };
 
 
-function createDetailRow(db, label, book, key, formatter) {
+function saveBook(db, book) {
+  Ti.API.info("saving: "+JSON.stringify(book));
+  db.save(book._id, book, function(resp, status) {
+    if (status !== 201) {
+      alert('Error updating book: '+JSON.stringify(resp));
+    }
+  });
+};
+
+function createDetailRow(parentWin, label, book, key, formatter) {
   var result = Ti.UI.createTableViewRow({
     touchEnabled: false,
     _value: book[key],
@@ -171,7 +218,7 @@ function createDetailRow(db, label, book, key, formatter) {
 
   result.add(Ti.UI.createLabel({
     top: 4,
-    bottom: 4,
+    bottom: 6,
     left: 4,
     width: 80,
     color: '#6070A0',
@@ -200,17 +247,12 @@ function createDetailRow(db, label, book, key, formatter) {
       return this._value
     }
     else {
-      var newvalue = arguments[0];
-      var dataToMerge = {};
-      dataToMerge[key] = newvalue;
-      db.merge(book._id, dataToMerge, function(resp, status) {
-        if (status === 201) {
-          this._value = newvalue;
-          valueLabel.text = formatter(newvalue);
-        }
-        else {
-          alert('Error updating book '+label+': '+JSON.stringify(resp));
-        }
+      var v = arguments[0];
+      this._value = v;
+      valueLabel.text = formatter(v);
+      parentWin.fireEvent('book:change', {
+        key: key,
+        value: v,
       });
     }
   };
@@ -302,3 +344,4 @@ exports.createEditorWindow = function(tableRow) {
   
   return result;
 };
+

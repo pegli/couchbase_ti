@@ -32,13 +32,18 @@ var fsm = StateMachine.create({
     { name: 'db_does_not_exist', from: 'checking_for_db',   to: 'creating_db' },
     { name: 'created_db',        from: 'creating_db',       to: 'loading_seed_data' },
     { name: 'loaded_seed_data',  from: 'loading_seed_data', to: 'done' },
+    { name: 'no_seed_data',      from: 'loading_seed_data', to: 'done' },
     { name: 'show_error',        from: ['creating_db', 'loading_seed_data', 'starting_server'], to: 'error' }
   ],
   callbacks: {
+    onchangestate: function(event, from, to) {
+      // included for debugging
+      Ti.API.info("CHANGED STATE: " + from + " to " + to);
+    },
     onstarting_server: function(event, from, to) {
       var self = this;
       CouchServer.addEventListener('com.obscure.couchbase_ti.server_started', function(e) {
-        client = new CouchClient(e.serverUrl);
+        client = new CouchClient(e.serverUrl, null, true);  // enable debugging of HTTP requests
         db = client.database('books');
         self.server_started();
       });
@@ -64,21 +69,42 @@ var fsm = StateMachine.create({
     onloading_seed_data: function(event, from, to) {
       var self = this;
       var f = Ti.Filesystem.getFile('data/seed_data.json');
-      var docs = JSON.parse(f.read());
-      db.save(docs, function(data, status) {
-        if (status === 201) {
-          self.loaded_seed_data();
+      if (!f.exists) {
+        self.no_seed_data();
+      }
+      else {
+        var contents = f.read();
+        if (contents.mimeType !== 'text/json' && contents.mimeType !== 'application/json') {
+          self.show_error('Error reading seed data: wrong content type '+contents.mimeType);
+          return;
         }
-        else {
-          self.show_error('Error loading data: '+JSON.stringify(resp), status);
+        
+        var docs;
+        try {
+          docs = JSON.parse(contents.text);
         }
-      });
+        catch (e) {
+          self.show_error("Error parsing JSON seed data file: "+JSON.stringify(e));
+          return;
+        }
+        
+        db.save(docs, function(resp, status) {
+          if (status === 201) {
+            self.loaded_seed_data();
+          }
+          else {
+            Ti.API.error('Error loading data: '+JSON.stringify(resp), status);
+            self.no_seed_data();
+          }
+        });
+  
+      }
     },
     ondone: function(event, from, to) {
       controller.open(books.createRootWindow(controller, db));
     },
     onerror: function(event, from, to, msg, status) {
-      alert(msg);
+      Ti.API.error(msg);
     }
   }
 });

@@ -92,7 +92,7 @@ function load_book_list(db, table) {
     if (status === 200) {
       var section;
       for (i in data.rows) {
-        var author = data.rows[i].key;
+        var author = data.rows[i].key[0];
         var book = data.rows[i].doc;
         
         if (!section || section.headerTitle !== author) {

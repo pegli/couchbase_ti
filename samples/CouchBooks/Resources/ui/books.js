@@ -129,11 +129,13 @@ exports.createDetailWindow = function(controller, db, book) {
   // create a copy of the original book for editing  
   var newbook = {};
   _.extend(newbook, book);
+  
+  // _.extend is a shallow copy, so manually duplicate the copyright array
+  newbook.copyright = book.copyright.slice(0);
 
   result.addEventListener('book:change', function(e) {
-    var key = e.key, value = e.value;
-    if (key && value) {
-      newbook[key] = value;
+    if (e.key && e.value) {
+      newbook[e.key] = e.value;
     }
   });
   
@@ -257,21 +259,19 @@ function createDetailRow(parentWin, label, book, key, formatter) {
     return label;
   }
   
-  result.current_value = function() {
-    if (arguments.length === 0) {
-      return this._value
-    }
-    else {
-      var v = arguments[0];
-      this._value = v;
-      valueLabel.text = formatter(v);
-      parentWin.fireEvent('book:change', {
-        key: key,
-        value: v,
-      });
-    }
+  result._current_value = function() {
+    return this._value;
   };
   
+  result._set_current_value = function(v) {
+    this._value = v;
+    valueLabel.text = formatter(v);
+    parentWin.fireEvent('book:change', {
+      key: key,
+      value: this._value,
+    });
+  };
+    
   result.addEventListener('click', function(e) {
     // not sure why we are receiving events if touchEnabled == false...
     if (result.touchEnabled) {
@@ -294,7 +294,7 @@ exports.createEditorWindow = function(tableRow) {
     backgroundColor: 'stripped',
   });
   
-  var current = tableRow.current_value();
+  var current = tableRow._current_value();
   var savefn;
   
   if (_.isArray(current)) {
@@ -315,7 +315,7 @@ exports.createEditorWindow = function(tableRow) {
     result.add(picker);
     
     savefn = function(e) {
-      tableRow.current_value(date_to_array(pickerVal));
+      tableRow._set_current_value(date_to_array(pickerVal));
       result.close();
     }
   }
@@ -327,12 +327,12 @@ exports.createEditorWindow = function(tableRow) {
       height: 35,
       font: { fontSize: 14 },
       borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
-      value: tableRow.current_value(),
+      value: tableRow._current_value(),
     });
     result.add(textField);
     
     savefn = function(e) {
-      tableRow.current_value(textField.value);
+      tableRow._set_current_value(textField.value);
       result.close();
     }
   }

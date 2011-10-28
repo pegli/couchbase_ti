@@ -45,6 +45,14 @@ exports.NavigationController.prototype.open = function(/*Ti.UI.Window*/windowToO
   }
 };
 
+//pop the top window off the controller stack
+exports.NavigationController.prototype.pop = function() {
+  if (this.windowStack.length < 1) return;
+  
+  var windowToClose = this.windowStack[this.windowStack.length - 1];
+  (this.navGroup) ? this.navGroup.close(windowToClose) : windowToClose.close();
+};
+
 //go back to the initial window of the NavigationController
 exports.NavigationController.prototype.home = function() {
   //store a copy of all the current windows on the stack

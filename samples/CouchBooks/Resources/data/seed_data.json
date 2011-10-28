@@ -13,7 +13,6 @@
     "_id": "_design/books",
     "views": {
       "by_author": {
-      /* TODO sort by title as well! */
         "map": "function(doc) {\n  if (doc.author) {\n    emit(doc.author, null);\n  }\n}"
       }
     } 

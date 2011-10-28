@@ -13,7 +13,7 @@
     "_id": "_design/books",
     "views": {
       "by_author": {
-        "map": "function(doc) {\n  if (doc.author) {\n    emit(doc.author, null);\n  }\n}"
+        "map": "function(doc) {\n  if (doc.author) {\n    emit([doc.author, doc.title || ''], null);\n  }\n}"
       }
     } 
   }

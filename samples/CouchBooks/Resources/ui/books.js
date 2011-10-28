@@ -173,14 +173,21 @@ exports.createDetailWindow = function(controller, db, book) {
         buttonNames: [L('Ok'), L('Cancel')]
       });
       alertDialog.addEventListener('click', function(e) {
-        if (!e.cancel) {
+        if (e.index === 0) {
+          /*
+           * If the _id field changed, you need to remove the revision or there
+           * will be a document update error if you ever try to save the doc again.
+           */
+          delete newbook._rev;
           saveBook(db, newbook);
+          controller.pop();
         }
       });
       alertDialog.show();
     }
     else {
       saveBook(db, newbook);
+      controller.pop();
     }
     
   });
@@ -201,6 +208,14 @@ exports.createDetailWindow = function(controller, db, book) {
 
 function saveBook(db, book) {
   Ti.API.info("saving: "+JSON.stringify(book));
+  
+  /*
+   * ensure that the book has a title and an author, or it won't be
+   * displayed in the book list
+   */
+  book.title = book.title || L('book.default_title')
+  book.author = book.author || L('book.default_author')
+  
   db.save(book._id, book, function(resp, status) {
     if (status !== 201) {
       alert('Error updating book: '+JSON.stringify(resp));

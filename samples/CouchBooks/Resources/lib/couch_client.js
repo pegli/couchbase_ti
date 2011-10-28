@@ -10,9 +10,12 @@ var slice = Array.prototype.slice;
 
 exports.CouchClient = function() {
   var args = slice.call(arguments);
-  this.base_url = arguments.length > 0 ? arguments[0] : 'http://127.0.0.1:5984';
-  this.auth = arguments.length > 1 ? arguments[1] : null;
-  this.debug = arguments.length > 2 ? arguments[2] : false;
+  this.base_url = args.shift() || 'http://127.0.0.1:5984';
+  this.auth = args.shift() || null;
+  this.debug = args.shift() || false;
+  
+  // clean up base_url
+  this.base_url = this.base_url.replace(/\/$/, ''); // strip trailing slash
 };
 
 // server-level miscellaneous methods
@@ -55,7 +58,7 @@ exports.CouchClient.prototype.database = function(name) {
       server._request.apply(server, [method, [_esc(name), path].join('/')].concat(args));
     },
     exists: function(callback) {
-      this.query('HEAD', '/', function(body, status, contentType) {
+      this.query('HEAD', '', function(body, status, contentType) {
         if (status === 200) {
           callback(true);
         }
@@ -68,13 +71,13 @@ exports.CouchClient.prototype.database = function(name) {
       });
     },
     create: function(callback) {
-      this.query('PUT', '/', callback);
+      this.query('PUT', '', callback);
     },
     destroy: function(callback) {
-      this.query('DELETE', '/', callback);
+      this.query('DELETE', '', callback);
     },
     info: function(callback) {
-      this.query('GET', '/', callback);
+      this.query('GET', '', callback);
     },
     all: function(/* options, */ callback) {
       var args = slice.call(arguments),
@@ -123,7 +126,7 @@ exports.CouchClient.prototype.database = function(name) {
       
       if (Array.isArray(doc)) {
         document.docs = doc;
-        this.query('POST', '/_bulk_docs', {}, document, callback);
+        this.query('POST', '_bulk_docs', {}, document, callback);
       }
       else {
         // TODO design docs?
@@ -134,7 +137,7 @@ exports.CouchClient.prototype.database = function(name) {
           this.query('PUT', _esc(id), null, doc, callback);
         }
         else {
-          this.query('POST', '/', {}, document, callback);
+          this.query('POST', '', {}, document, callback);
         }
       }
     },

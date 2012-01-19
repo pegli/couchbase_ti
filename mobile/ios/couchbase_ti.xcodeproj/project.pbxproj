@@ -22,9 +22,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		24DD6CF91134B3F500162E58 /* ComObscureCouchbase_tiModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */; };
-		24DD6CFA1134B3F500162E58 /* ComObscureCouchbase_tiModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */; };
-		AA747D9F0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */; };
+		24DD6CF91134B3F500162E58 /* ComObscureCouchbaseTiModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* ComObscureCouchbaseTiModule.h */; };
+		24DD6CFA1134B3F500162E58 /* ComObscureCouchbaseTiModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComObscureCouchbaseTiModule.m */; };
+		AA747D9F0F9514B9006C5449 /* ComObscureCouchbaseTi_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComObscureCouchbaseTi_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,17 +34,17 @@
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = couchbase_ti;
+			remoteInfo = couchbaseti;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComObscureCouchbase_tiModule.h; path = Classes/ComObscureCouchbase_tiModule.h; sourceTree = "<group>"; };
-		24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComObscureCouchbase_tiModule.m; path = Classes/ComObscureCouchbase_tiModule.m; sourceTree = "<group>"; };
+		24DD6CF71134B3F500162E58 /* ComObscureCouchbaseTiModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComObscureCouchbaseTiModule.h; path = Classes/ComObscureCouchbaseTiModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* ComObscureCouchbaseTiModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComObscureCouchbaseTiModule.m; path = Classes/ComObscureCouchbaseTiModule.m; sourceTree = "<group>"; };
 		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
-		AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComObscureCouchbase_ti_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AA747D9E0F9514B9006C5449 /* ComObscureCouchbaseTi_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComObscureCouchbaseTi_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D2AAC07E0554694100DB518D /* libComObscureCouchbase_ti.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComObscureCouchbase_ti.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC07E0554694100DB518D /* libComObscureCouchbaseTi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComObscureCouchbaseTi.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +62,12 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libComObscureCouchbase_ti.a */,
+				D2AAC07E0554694100DB518D /* libComObscureCouchbaseTi.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0867D691FE84028FC02AAC07 /* couchbase_ti */ = {
+		0867D691FE84028FC02AAC07 /* couchbaseti */ = {
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
@@ -75,7 +75,7 @@
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
-			name = couchbase_ti;
+			name = couchbaseti;
 			sourceTree = "<group>";
 		};
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
@@ -89,8 +89,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				24DD6CF71134B3F500162E58 /* ComObscureCouchbase_tiModule.h */,
-				24DD6CF81134B3F500162E58 /* ComObscureCouchbase_tiModule.m */,
+				24DD6CF71134B3F500162E58 /* ComObscureCouchbaseTiModule.h */,
+				24DD6CF81134B3F500162E58 /* ComObscureCouchbaseTiModule.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -98,7 +98,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA747D9E0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch */,
+				AA747D9E0F9514B9006C5449 /* ComObscureCouchbaseTi_Prefix.pch */,
 				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
 			);
 			name = "Other Sources";
@@ -111,17 +111,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA747D9F0F9514B9006C5449 /* ComObscureCouchbase_ti_Prefix.pch in Headers */,
-				24DD6CF91134B3F500162E58 /* ComObscureCouchbase_tiModule.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* ComObscureCouchbaseTi_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* ComObscureCouchbaseTiModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D2AAC07D0554694100DB518D /* couchbase_ti */ = {
+		D2AAC07D0554694100DB518D /* couchbaseti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbase_ti" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbaseti" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -132,9 +132,9 @@
 			);
 			dependencies = (
 			);
-			name = couchbase_ti;
-			productName = couchbase_ti;
-			productReference = D2AAC07E0554694100DB518D /* libComObscureCouchbase_ti.a */;
+			name = couchbaseti;
+			productName = couchbaseti;
+			productReference = D2AAC07E0554694100DB518D /* libComObscureCouchbaseTi.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -145,7 +145,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "couchbase_ti" */;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "couchbaseti" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -155,12 +155,12 @@
 				French,
 				German,
 			);
-			mainGroup = 0867D691FE84028FC02AAC07 /* couchbase_ti */;
+			mainGroup = 0867D691FE84028FC02AAC07 /* couchbaseti */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* couchbase_ti */,
+				D2AAC07D0554694100DB518D /* couchbaseti */,
 				24416B8111C4CA220047AFDD /* Build & Test */,
 			);
 		};
@@ -201,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24DD6CFA1134B3F500162E58 /* ComObscureCouchbase_tiModule.m in Sources */,
+				24DD6CFA1134B3F500162E58 /* ComObscureCouchbaseTiModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,7 @@
 /* Begin PBXTargetDependency section */
 		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2AAC07D0554694100DB518D /* couchbase_ti */;
+			target = D2AAC07D0554694100DB518D /* couchbaseti */;
 			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -221,18 +221,18 @@
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
+				DSTROOT = /tmp/ComObscureCouchbaseTi.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
+				GCC_PREFIX_HEADER = ComObscureCouchbaseTi_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Couchbase,
 				);
-				PRODUCT_NAME = ComObscureCouchbase_ti;
+				PRODUCT_NAME = ComObscureCouchbaseTi;
 			};
 			name = Debug;
 		};
@@ -240,16 +240,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
 			buildSettings = {
-				DSTROOT = /tmp/ComObscureCouchbase_ti.dst;
+				DSTROOT = /tmp/ComObscureCouchbaseTi.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ComObscureCouchbase_ti_Prefix.pch;
+				GCC_PREFIX_HEADER = ComObscureCouchbaseTi_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Couchbase,
 				);
-				PRODUCT_NAME = ComObscureCouchbase_ti;
+				PRODUCT_NAME = ComObscureCouchbaseTi;
 			};
 			name = Release;
 		};
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbase_ti" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "couchbaseti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
@@ -348,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "couchbase_ti" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "couchbaseti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,

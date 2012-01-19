@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0.3
+version: 1.1
 description: Couchbase Mobile module for iOS
 author: Paul Mietz Egli
 license: Apache 2.0
@@ -10,8 +10,8 @@ copyright: Copyright (c) 2011 Paul Mietz Egli
 
 
 # these should not be edited
-name: couchbase_ti
-moduleid: com.obscure.couchbase_ti
+name: couchbaseti
+moduleid: com.obscure.CouchbaseTi
 guid: ffaaae27-9ded-4cca-adbd-7a5d984c4085
 platform: iphone
-minsdk: 1.7.3
+minsdk: 1.8.0.1

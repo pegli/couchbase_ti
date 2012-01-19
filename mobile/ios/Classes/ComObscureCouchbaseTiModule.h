@@ -10,7 +10,7 @@
 #define kEventServerStarted @"com.obscure.couchbase_ti.server_started"
 #define kEventParamServerURL @"serverUrl"
 
-@interface ComObscureCouchbase_tiModule : TiModule <CouchbaseDelegate> {
+@interface ComObscureCouchbaseTiModule : TiModule <CouchbaseDelegate> {
 }
 @property (nonatomic, retain) CouchbaseMobile *server;
 -(void)startCouchbase:(id)args;

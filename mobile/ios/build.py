@@ -60,7 +60,7 @@ def generate_doc(config):
 	return documentation
 
 def compile_js(manifest,config):
-	js_file = os.path.join(cwd,'assets','com.obscure.couchbase_ti.js')
+	js_file = os.path.join(cwd,'assets','com.obscure.couchbaseti.js')
 	if not os.path.exists(js_file): return
 	
 	sdk = config['TITANIUM_SDK']
@@ -121,7 +121,7 @@ def validate_manifest():
 			if curvalue==defvalue: warn("please update the manifest key: '%s' to a non-default value" % key)
 	return manifest,path
 
-ignoreFiles = ['.DS_Store','.gitignore','libTitanium.a','titanium.jar','README','com.obscure.couchbase_ti.js']
+ignoreFiles = ['.DS_Store','.gitignore','libTitanium.a','titanium.jar','README','com.obscure.couchbaseti.js']
 ignoreDirs = ['.DS_Store','.svn','.git','CVSROOT']
 
 def zip_dir(zf,dir,basepath,ignore=[]):

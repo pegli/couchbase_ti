@@ -17,7 +17,7 @@ window.open();
 // register for the server start event BEFORE loading the module!
 
 var serverUrl;
-var couchbase_ti = require('com.obscure.couchbase_ti');
+var couchbase_ti = require('com.obscure.CouchbaseTi');
 couchbase_ti.addEventListener("com.obscure.couchbase_ti.server_started", function(e) {
 Ti.API.info(e);
   serverUrl = e.serverUrl;

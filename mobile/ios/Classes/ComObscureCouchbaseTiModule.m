@@ -4,12 +4,12 @@
  * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
  * and licensed under the Apache Public License (version 2)
  */
-#import "ComObscureCouchbase_tiModule.h"
+#import "ComObscureCouchbaseTiModule.h"
 #import "TiBase.h"
 #import "TiHost.h"
 #import "TiUtils.h"
 
-@implementation ComObscureCouchbase_tiModule
+@implementation ComObscureCouchbaseTiModule
 
 @synthesize server;
 
@@ -18,13 +18,13 @@
 // this is generated for your module, please do not change it
 -(id)moduleGUID
 {
-	return @"5362b230-c736-4779-b246-f418d911f6f1";
+	return @"ffaaae27-9ded-4cca-adbd-7a5d984c4085";
 }
 
 // this is generated for your module, please do not change it
 -(NSString*)moduleId
 {
-	return @"com.obscure.couchbase_ti";
+	return @"com.obscure.CouchbaseTi";
 }
 
 #pragma mark Lifecycle
@@ -37,7 +37,7 @@
 }
 
 - (void)startCouchbase:(id)args {
-  NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"modules/com.obscure.couchbase_ti"];
+  NSString * resourcesPath = [[NSBundle mainBundle] pathForResource:@"CouchbaseResources" ofType:nil inDirectory:@"modules/com.obscure.couchbaseti"];
   CouchbaseMobile * s = [[CouchbaseMobile alloc] initWithBundlePath:resourcesPath];
   s.delegate = self;
   if ([s start]) {

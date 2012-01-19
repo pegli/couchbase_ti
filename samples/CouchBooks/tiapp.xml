@@ -36,6 +36,6 @@
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <modules>
-        <module platform="iphone" version="1.0.2">com.obscure.couchbase_ti</module>
+        <module platform="iphone" version="1.0.3">com.obscure.couchbase_ti</module>
     </modules>
 </ti:app>

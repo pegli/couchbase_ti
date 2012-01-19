@@ -16,24 +16,4 @@ window.open();
 var couchbaseti = require('com.obscure.CouchbaseTi');
 Ti.API.info("module is => " + couchbaseti);
 
-label.text = couchbaseti.example();
-
-Ti.API.info("module exampleProp is => " + couchbaseti.exampleProp);
-couchbaseti.exampleProp = "This is a test value";
-
-if (Ti.Platform.name == "android") {
-	var proxy = couchbaseti.createExample({
-		message: "Creating an example Proxy",
-		backgroundColor: "red",
-		width: 100,
-		height: 100,
-		top: 100,
-		left: 150
-	});
-
-	proxy.printMessage("Hello world!");
-	proxy.message = "Hi world!.  It's me again.";
-	proxy.printMessage("Hello world!");
-	window.add(proxy);
-}
-
+couchbaseti.startCouchbase();

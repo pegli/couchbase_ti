@@ -7,7 +7,8 @@
  *
  */
 package com.obscure.CouchbaseTi;
-
+import java.util.Map;
+import java.util.HashMap;
 import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 
@@ -25,6 +26,8 @@ public class CouchbasetiModule extends KrollModule implements ICouchbaseDelegate
 	private static final String LCAT = "CouchbasetiModule";
 	private static final boolean DBG = TiConfig.LOGD;
 	
+	private static final String SERVER_STARTED_EVENT = "com.obscure.couchbase_ti.server_started";
+	
 	protected static ServiceConnection couchServiceConnection;
 
 	// You can define constants with @Kroll.constant, for example:
@@ -38,6 +41,9 @@ public class CouchbasetiModule extends KrollModule implements ICouchbaseDelegate
     @Override
     public void couchbaseStarted(String host, int port) {
     	Log.d(LCAT, "started couchbase on "+host+":"+port);
+    	Map<String,Object> props = new HashMap<String,Object>();
+    	props.put("serverUrl", String.format("http://%s:%d", host, port));
+    	fireEvent(SERVER_STARTED_EVENT, props);
     }
 
     @Override

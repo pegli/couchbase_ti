@@ -1,4 +1,4 @@
 tmp
 build
-.project
-.settings
+build.log
+.*

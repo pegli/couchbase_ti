@@ -38,11 +38,11 @@ exports.createRootWindow = function(controller, db, options) {
     
   });
   result.addEventListener('click', function(e) {
-    var book = e.rowData.book;
+    var book = e.source.book;
     controller.open(exports.createDetailWindow(controller, db, book));
   });
   result.addEventListener('delete', function(e) {
-    var book = e.rowData.book;
+    var book = e.source.book;
     if (book) {
       db.remove(book._id, book._rev, function(resp, status) {
         if (status !== 200) {

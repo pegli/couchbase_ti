@@ -1,6 +1,9 @@
 
 var _ = require('lib/underscore')._;
 
+var is_ios = Ti.Platform.osname === 'iphone' || Ti.Platform.osname === 'ipad';
+var is_android = Ti.Platform.osname === 'android';
+
 function array_to_date(a) {
   var d = new Date(0);
   d.setFullYear(a.shift() || 0);
@@ -29,7 +32,7 @@ var dateFormatter = function(v) {
 
 exports.createRootWindow = function(controller, db, options) {
   var result = Ti.UI.createWindow({
-    title: L('RootWindow.title'),
+    title: L('RootWindow_title'),
     backgroundColor: 'white',
   });
   _.extend(result, options);
@@ -53,37 +56,63 @@ exports.createRootWindow = function(controller, db, options) {
   });
   result.add(tableView);
 
-  var editButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.EDIT,
-  });
-  editButton.addEventListener('click', function(e) {
-    tableView.editing = true;
-    result.leftNavButton = doneButton;
-  });
-  
-  var doneButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.DONE,
-  });
-  doneButton.addEventListener('click', function(e) {
-    tableView.editing = false;
-    result.leftNavButton = editButton;
-  });
-  
-  result.leftNavButton = editButton;
-  
-  var addButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.ADD,
-  });
-  addButton.addEventListener('click', function(e) {
-    var win = exports.createDetailWindow(controller, db, {
-      title: L('book.default_title'),
-      author: L('book.default_author'),
-      copyright: [1970],
+  if (is_ios) {
+    var editButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.EDIT,
     });
-    win._set_editing(true);
-    controller.open(win);
-  });
-  result.rightNavButton = addButton;
+    editButton.addEventListener('click', function(e) {
+      tableView.editing = true;
+      result.leftNavButton = doneButton;
+    });
+    
+    var doneButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.DONE,
+    });
+    doneButton.addEventListener('click', function(e) {
+      tableView.editing = false;
+      result.leftNavButton = editButton;
+    });
+    
+    result.leftNavButton = editButton;
+    
+    var addButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.ADD,
+    });
+    addButton.addEventListener('click', function(e) {
+      var win = exports.createDetailWindow(controller, db, {
+        title: L('book_default_title'),
+        author: L('book_default_author'),
+        copyright: [1970],
+      });
+      win._set_editing(true);
+      controller.open(win);
+    });
+    result.rightNavButton = addButton;
+  }
+  else if (is_android) {
+    result.activity.onCreateOptionsMenu  = function(e) {
+      var menu = e.menu;
+      
+      // add menu
+      var addMenuItem = menu.add({
+        title: L('RootWindow_menu_add')
+      });
+      addMenuItem.addEventListener('click', function(e) {
+        var win = exports.createDetailWindow(controller, db, {
+          title: L('book_default_title'),
+          author: L('book_default_author'),
+          copyright: [1970],
+        });
+        win._set_editing(true);
+        controller.open(win);
+      });
+      
+      // no equivalent to setting the TableView in edit mode yet...
+    }
+  }
+  else {
+    Ti.API.error('unknown OS: ' + Ti.Platform.osname);
+  }
 
   result.addEventListener('open', function(e) {
     load_book_list(db, tableView);
@@ -120,9 +149,38 @@ function load_book_list(db, table) {
   });
 };
 
+function validate_new_book(book, newbook) {
+  if (!newbook._id || newbook._id.length < 1) {
+    alert(L('DetailWindow_error_missing_id'));
+    return false;
+  }
+  
+  if (book._id && newbook._id !== book._id) {
+    var alertDialog = Ti.UI.createAlertDialog({
+      message: L('DetailWindow_warning_changed_id'),
+      buttonNames: [L('Ok'), L('Cancel')]
+    });
+    alertDialog.addEventListener('click', function(e) {
+      if (e.index === 0) {
+        /*
+         * If the _id field changed, you need to remove the revision or there
+         * will be a document update error if you ever try to save the doc again.
+         */
+        delete newbook._rev;
+        saveBook(db, newbook);
+        controller.pop();
+      }
+    });
+    alertDialog.show();
+    return false;
+  }
+  
+  return true;
+}
+
 exports.createDetailWindow = function(controller, db, book) {
   var result = Ti.UI.createWindow({
-    title: L('DetailWindow.title'),
+    title: L('DetailWindow_title'),
     backgroundColor: 'white',
   });
 
@@ -140,59 +198,67 @@ exports.createDetailWindow = function(controller, db, book) {
   });
   
   var rows = [];
-  rows.push(createDetailRow(result, L('DetailRow._id'), book, '_id'));
-  rows.push(createDetailRow(result, L('DetailRow.title'), book, 'title'));
-  rows.push(createDetailRow(result, L('DetailRow.author'), book, 'author'));
-  rows.push(createDetailRow(result, L('DetailRow.copyright'), book, 'copyright', dateFormatter));
+  rows.push(createDetailRow(result, L('DetailRow__id'), book, '_id'));
+  rows.push(createDetailRow(result, L('DetailRow_title'), book, 'title'));
+  rows.push(createDetailRow(result, L('DetailRow_author'), book, 'author'));
+  rows.push(createDetailRow(result, L('DetailRow_copyright'), book, 'copyright', dateFormatter));
   
   var tableView = Ti.UI.createTableView({
     data: rows,
-    style: Ti.UI.iPhone.TableViewStyle.GROUPED,
   });
+
+  if (is_ios) {
+    tableView.style = Ti.UI.iPhone.TableViewStyle.GROUPED;
+  }
   result.add(tableView);
 
-
-  var editButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.EDIT,
-  });
-  editButton.addEventListener('click', function(e) {
-    result._set_editing(true);
-  });
-  
-  var doneButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.DONE,
-  });
-  doneButton.addEventListener('click', function(e) {
-    result._set_editing(false);
-    if (!newbook._id || newbook._id.length < 1) {
-      alert(L('DetailWindow.error.missing_id'));
-      return;
-    }
+  if (is_ios) {
+    var editButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.EDIT,
+    });
+    editButton.addEventListener('click', function(e) {
+      result._set_editing(true);
+    });
     
-    if (book._id && newbook._id !== book._id) {
-      var alertDialog = Ti.UI.createAlertDialog({
-        message: L('DetailWindow.warning.changed_id'),
-        buttonNames: [L('Ok'), L('Cancel')]
+    var doneButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.DONE,
+    });
+    doneButton.addEventListener('click', function(e) {
+      result._set_editing(false);
+      if (validate_new_book(book, newbook)) {
+        saveBook(db, newbook);
+        controller.pop();
+      }
+    });
+  }
+  else if (is_android) {
+    result.activity.onCreateOptionsMenu  = function(e) {
+      var menu = e.menu;
+      
+      // edit menu item
+      var editMenuItem = menu.add({
+        title: L('DetailWindow_edit')
       });
-      alertDialog.addEventListener('click', function(e) {
-        if (e.index === 0) {
-          /*
-           * If the _id field changed, you need to remove the revision or there
-           * will be a document update error if you ever try to save the doc again.
-           */
-          delete newbook._rev;
+      editMenuItem.addEventListener('click', function(e) {
+        result._set_editing(true);
+      });
+      
+      // save menu item
+      var saveMenuItem = menu.add({
+        title: L('DetailWindow_save')
+      });
+      editMenuItem.addEventListener('click', function(e) {
+        result._set_editing(false);
+        if (validate_new_book(book, newbook)) {
           saveBook(db, newbook);
           controller.pop();
         }
       });
-      alertDialog.show();
-    }
-    else {
-      saveBook(db, newbook);
-      controller.pop();
-    }
-    
-  });
+    }      
+  } 
+  else {
+    Ti.API.error('unknown OS: ' + Ti.Platform.osname);
+  }
   
   result.rightNavButton = editButton;
   
@@ -215,8 +281,8 @@ function saveBook(db, book) {
    * ensure that the book has a title and an author, or it won't be
    * displayed in the book list
    */
-  book.title = book.title || L('book.default_title')
-  book.author = book.author || L('book.default_author')
+  book.title = book.title || L('book_default_title')
+  book.author = book.author || L('book_default_author')
   
   db.save(book._id, book, function(resp, status) {
     if (status !== 201) {
@@ -234,10 +300,10 @@ function createDetailRow(parentWin, label, book, key, formatter) {
   formatter = (formatter || function(v) { return v; }),
 
   result.add(Ti.UI.createLabel({
-    top: 4,
-    bottom: 6,
-    left: 4,
-    width: 80,
+    top: '4dp',
+    bottom: '6dp',
+    left: '4dp',
+    width: '80dp',
     color: '#6070A0',
     font: { fontSize: 12 },
     text: label,
@@ -245,10 +311,10 @@ function createDetailRow(parentWin, label, book, key, formatter) {
   }));
 
   var valueLabel = Ti.UI.createLabel({
-    top: 4,
-    left: 90, 
-    bottom: 4,
-    width: 190,
+    top: '4dp',
+    left: '90dp', 
+    bottom: '4dp',
+    width: '190dp',
     color: 'black',
     font: { fontSize: 14, fontWeight: 'bold' },
     text: formatter(book[key]),
@@ -276,11 +342,15 @@ function createDetailRow(parentWin, label, book, key, formatter) {
     // not sure why we are receiving events if touchEnabled == false...
     if (result.touchEnabled) {
       var editor = exports.createEditorWindow(result);
-      editor.open({
-        modal: true,
-        style: Ti.UI.iPhone.MODAL_TRANSITION_STYLE_COVER_VERTICAL,
-        presentation: Ti.UI.iPhone.MODAL_PRESENTATION_PAGESHEET,
-      });
+      var options = { modal: true };
+      if (is_ios) {
+        options.style = Ti.UI.iPhone.MODAL_TRANSITION_STYLE_COVER_VERTICAL;
+        options.presentation = Ti.UI.iPhone.MODAL_PRESENTATION_PAGESHEET;
+      }
+      else if (is_android) {
+        // TODO window animation?
+      }
+      editor.open(options);
     }
   });
   
@@ -291,7 +361,7 @@ function createDetailRow(parentWin, label, book, key, formatter) {
 exports.createEditorWindow = function(tableRow) {
   var result = Ti.UI.createWindow({
     title: tableRow.label(),
-    backgroundColor: 'stripped',
+    backgroundColor: is_ios ? 'stripped' : 'white',
   });
   
   var current = tableRow._current_value();
@@ -301,7 +371,7 @@ exports.createEditorWindow = function(tableRow) {
     var pickerVal = array_to_date(current);
 
     var picker = Ti.UI.createPicker({
-      top: 12,
+      top: '12dp',
       type: Titanium.UI.PICKER_TYPE_DATE,
       value: pickerVal,
     });
@@ -321,10 +391,10 @@ exports.createEditorWindow = function(tableRow) {
   }
   else {
     var textField = Ti.UI.createTextField({
-      top: 12,
-      left: 10,
-      right: 10,
-      height: 35,
+      top: '12dp',
+      left: '10dp',
+      right: '10dp',
+      height: '35dp',
       font: { fontSize: 14 },
       borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED,
       value: tableRow._current_value(),
@@ -337,20 +407,42 @@ exports.createEditorWindow = function(tableRow) {
     }
   }
   
-
-  var cancelButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.CANCEL,
-  });
-  cancelButton.addEventListener('click', function(e) {
-    result.close();
-  });
-  result.leftNavButton = cancelButton;
-  
-  var saveButton = Ti.UI.createButton({
-    systemButton: Ti.UI.iPhone.SystemButton.SAVE,
-  });
-  saveButton.addEventListener('click', savefn);
-  result.rightNavButton = saveButton;
+  if (is_ios) {
+    var cancelButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.CANCEL,
+    });
+    cancelButton.addEventListener('click', function(e) {
+      result.close();
+    });
+    result.leftNavButton = cancelButton;
+    
+    var saveButton = Ti.UI.createButton({
+      systemButton: Ti.UI.iPhone.SystemButton.SAVE,
+    });
+    saveButton.addEventListener('click', savefn);
+    result.rightNavButton = saveButton;
+  }
+  else if (is_android) {
+    var cancelButton = Ti.UI.createButton({
+      left: '10%',
+      bottom: '10%',
+      width: '35%',
+      title: L('Cancel'),
+    });
+    cancelButton.addEventListener('click', function(e) {
+      result.close();
+    });
+    result.add(cancelButton);
+    
+    var saveButton = Ti.UI.createButton({
+      right: '10%',
+      bottom: '10%',
+      width: '35%',
+      title: L('Save'),
+    });
+    saveButton.addEventListener('click', savefn);
+    result.add(saveButton);
+  }
   
   
   result.addEventListener('open', function(e) {

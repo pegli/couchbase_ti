@@ -15,3 +15,5 @@ limitations under the License.
 ------
 
 Based on the work by the Couchbase team, also released under the Apache licence.
+
+Icons by Fat Cow http://www.fatcow.com/free-icons
